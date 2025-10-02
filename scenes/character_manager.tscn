@@ -1,9 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://bpjfrql1enbnm"]
+[gd_scene load_steps=96 format=3 uid="uid://bpjfrql1enbnm"]
 
 [ext_resource type="Script" uid="uid://ht1gfrw5k57m" path="res://scripts/character_manager.gd" id="1_g8e28"]
 [ext_resource type="Texture2D" uid="uid://4swtxkwiwf23" path="res://sprites/Makoto.png" id="2_tll58"]
 [ext_resource type="Texture2D" uid="uid://2gtuy0iehds6" path="res://sprites/Aoi.png" id="3_banfk"]
 [ext_resource type="Texture2D" uid="uid://cd1epjdept0tb" path="res://sprites/Hifumi.png" id="4_tll58"]
+[ext_resource type="Texture2D" uid="uid://cayaoui10e2wm" path="res://sprites/Byakuya.png" id="5_banfk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8e28"]
 atlas = ExtResource("2_tll58")
@@ -498,6 +499,147 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n2pj"]
+atlas = ExtResource("5_banfk")
+region = Rect2(527, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4t21"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1044, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2apos"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1561, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g277"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2078, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a17de"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2595, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exuty"]
+atlas = ExtResource("5_banfk")
+region = Rect2(3112, 10, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_radvm"]
+atlas = ExtResource("5_banfk")
+region = Rect2(10, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c53n0"]
+atlas = ExtResource("5_banfk")
+region = Rect2(527, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bp4l"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1044, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vik0"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1561, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbew5"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2078, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0fjg"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2595, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltuw4"]
+atlas = ExtResource("5_banfk")
+region = Rect2(3112, 1040, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvoku"]
+atlas = ExtResource("5_banfk")
+region = Rect2(10, 2070, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au410"]
+atlas = ExtResource("5_banfk")
+region = Rect2(527, 2070, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_annad"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1044, 2070, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3j57"]
+atlas = ExtResource("5_banfk")
+region = Rect2(1561, 2070, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bvf0"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2078, 2070, 507, 1020)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42s2q"]
+atlas = ExtResource("5_banfk")
+region = Rect2(2595, 2070, 507, 1020)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h7ida"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n2pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4t21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2apos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g277")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a17de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exuty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_radvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c53n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bp4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vik0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbew5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0fjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltuw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvoku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au410")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_annad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3j57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bvf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42s2q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_g8e28")
 
@@ -507,7 +649,6 @@ transform = Transform3D(0.12999998, 0, 0, 0, 0.13, 0, 0, 0, 0.12999998, 0, 0, 0)
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Makoto"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0599537, -11)
 sorting_offset = 100.0
-texture_filter = 0
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_0cbny")
 
@@ -520,7 +661,6 @@ transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hina"]
 transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.99999994, -9.536743e-07, 5.1226983, -10.962832)
 sorting_offset = 100.0
-texture_filter = 0
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_htgcl")
 
@@ -531,10 +671,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07760861, 7.521427, -11.48
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hifumi"]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0.6548681, -1.425173)
-alpha_cut = 1
-texture_filter = 0
 render_priority = 100
 sprite_frames = SubResource("SpriteFrames_7n2pj")
 
 [node name="Head" type="Node3D" parent="Hifumi"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063486, -1.4177492)
+
+[node name="Byakuya" type="Node3D" parent="."]
+visible = false
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Byakuya"]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0.6348895, -1.4396726)
+render_priority = 100
+sprite_frames = SubResource("SpriteFrames_h7ida")
+
+[node name="Head" type="Node3D" parent="Byakuya"]
