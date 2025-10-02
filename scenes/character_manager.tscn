@@ -645,6 +645,7 @@ script = ExtResource("1_g8e28")
 
 [node name="Makoto" type="Node3D" parent="."]
 transform = Transform3D(0.12999998, 0, 0, 0, 0.13, 0, 0, 0, 0.12999998, 0, 0, 0)
+visible = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Makoto"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0599537, -11)
@@ -657,6 +658,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10414767, 7.44208, -10.992
 
 [node name="Hina" type="Node3D" parent="."]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
+visible = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hina"]
 transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.99999994, -9.536743e-07, 5.1226983, -10.962832)
@@ -668,6 +670,7 @@ sprite_frames = SubResource("SpriteFrames_htgcl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07760861, 7.521427, -11.487143)
 
 [node name="Hifumi" type="Node3D" parent="."]
+visible = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hifumi"]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0.6548681, -1.425173)

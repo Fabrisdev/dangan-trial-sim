@@ -17,4 +17,6 @@ func set_expression(actor: String, pose: String) -> void:
 func assign(seats: Array):
 	for seat in seats:
 		var character_name = seat.character.capitalize()
-		get_node(character_name).rotation_degrees.y = float(seat.position) * 22.5
+		var character = get_node(character_name)
+		character.rotation_degrees.y = float(seat.position) * 22.5
+		character.visible = true
