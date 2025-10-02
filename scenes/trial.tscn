@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdgppj0ar2edr"]
+
+[ext_resource type="PackedScene" uid="uid://dygis4c7glwgd" path="res://models/trial/trial.glb" id="1_pew2h"]
+
+[node name="Trial" instance=ExtResource("1_pew2h")]

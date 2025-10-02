@@ -1,0 +1,59 @@
+extends Node3D
+
+var actions_node: Node = preload("uid://b7m08ec1cjdya").new()
+var is_sleeping := false
+
+func _ready() -> void:
+	add_child(actions_node)
+	var contents := read_trial_manager_file()
+	var lines := contents.split("\n")
+	start_manager(lines)
+	
+func start_manager(lines: Array[String]) -> void:
+	for line in lines:
+		if line.strip_edges() == '': continue
+		if line.begins_with("#"): continue
+		if is_sleeping:
+			await %AsleepTimer.timeout
+		execute_line(line)	
+		
+func execute_line(line: String) -> void:
+	var actor_and_action := extract_actor_and_action(line)
+	var actor = actor_and_action.actor
+	var action = actor_and_action.action
+	execute_action(actor, action)
+
+func execute_action(actor: String, action: Dictionary) -> void:
+	var actions := {}
+	for method in actions_node.get_method_list():
+		var name = method['name']
+		actions[name] = Callable(actions_node, name)
+	actions[action.name].call(actor, action.args)
+	print("Executing: ", action.name, " with args: ", action.args)
+
+func extract_actor_and_action(line: String) -> Dictionary:
+	var parts := line.split(':', false, 1)
+	var actor := parts[0].strip_edges()
+	var action := parts[1].strip_edges().split(' ')
+	var action_name := action[0]
+	var action_args := action.slice(1,action.size())
+	return {
+		"actor": actor,
+		"action": {
+			"name": action_name,
+			"args": action_args
+		}
+	}
+	
+func read_trial_manager_file() -> String:
+	var file := FileAccess.open("res://my_trial.txt", FileAccess.READ)
+	var content := file.get_as_text()
+	return content
+
+
+func _on_asleep_timer_timeout() -> void:
+	is_sleeping = false
+
+func set_asleep(seconds: float):
+	is_sleeping = true
+	%AsleepTimer.start(seconds)

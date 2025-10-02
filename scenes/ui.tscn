@@ -1,0 +1,267 @@
+[gd_scene load_steps=22 format=3 uid="uid://c8ijkimbdxdmj"]
+
+[ext_resource type="Script" uid="uid://dx63g61f43xax" path="res://scripts/ui_manager.gd" id="1_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="2_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://btl3cxi1i2a56" path="res://sprites/class_trial/name_background.png" id="3_8dubc"]
+[ext_resource type="FontFile" uid="uid://dq2i8fjiam0qn" path="res://fonts/SourceSans3-VariableFont_wght.ttf" id="4_p7vwb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkkcx"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(10, 7318, 960, 960)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx0wj"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(1060, 6642, 158, 328)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34ol3"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(1172, 8455, 256, 553)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2n8d"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(732, 8454, 164, 340)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy5fy"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(908, 9572, 256, 554)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1p13"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(906, 8454, 256, 1024)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obbf"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(908, 9572, 256, 554)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovcoh"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(642, 9572, 256, 554)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx4rg"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(10, 10838, 160, 160)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_kkkcx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatingText:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jx0wj"]
+resource_name = "rotate_text"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RotatingText:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34ol3"]
+_data = {
+&"RESET": SubResource("Animation_kkkcx"),
+&"rotate_text": SubResource("Animation_jx0wj")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dllo"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(1174, 9572, 256, 554)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phcyf"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(1438, 8454, 16, 32)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_birbe"]
+atlas = ExtResource("2_wm3ai")
+region = Rect2(1438, 8454, 16, 32)
+filter_clip = true
+
+[sub_resource type="FontVariation" id="FontVariation_34ol3"]
+base_font = ExtResource("4_p7vwb")
+variation_embolden = 1.5
+
+[sub_resource type="FontVariation" id="FontVariation_kkkcx"]
+base_font = ExtResource("4_p7vwb")
+variation_embolden = 1.5
+variation_transform = Transform2D(1, 0, 0, 0.7, 0, 0)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_gdt2y")
+
+[node name="RotatingText" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -804.3008
+offset_top = -617.9883
+offset_right = 804.3008
+offset_bottom = 617.9883
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(804.30084, 617.9883)
+texture = SubResource("AtlasTexture_kkkcx")
+stretch_mode = 5
+
+[node name="PolygonBackgroundColor" type="Polygon2D" parent="."]
+position = Vector2(-0.9497309, 0)
+scale = Vector2(1.0455977, 1)
+color = Color(0.9372549, 0.09019608, 0.09803922, 1)
+polygon = PackedVector2Array(233.64957, 16, 241, 9, 241.9188, 474, 138.09401, 468, 31.51282, 463, 45.29487, 342, 67.34615, 259, 83.88461, 226, 109.611115, 167, 129.82478, 137, 144.52563, 115, 171.17094, 81, 195.97864, 51, 207.92308, 41)
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+visible = false
+offset_left = 181.0
+offset_right = 206.0
+offset_bottom = 20.0
+color = Color(0.99912435, 0.22291619, 0.03332304, 1)
+
+[node name="Face" type="TextureRect" parent="."]
+offset_left = 39.0
+offset_top = 33.746826
+offset_right = 253.0
+offset_bottom = 478.0
+texture = SubResource("AtlasTexture_jx0wj")
+
+[node name="BackgroundLeftRed" type="TextureRect" parent="."]
+offset_right = 333.0
+offset_bottom = 719.33203
+texture = SubResource("AtlasTexture_34ol3")
+
+[node name="LeftRed" type="TextureRect" parent="."]
+offset_left = 35.0
+offset_top = -3.0
+offset_right = 252.0
+offset_bottom = 446.87802
+texture = SubResource("AtlasTexture_c2n8d")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(47, -2)
+color = Color(0.9372549, 0.19607843, 0.003921569, 1)
+polygon = PackedVector2Array(184, 0, 185, 23, 203, 21, 206, 0, 194, 0)
+
+[node name="BorderRightRed" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_right = 333.0
+offset_bottom = 720.6328
+texture = SubResource("AtlasTexture_wy5fy")
+flip_h = true
+
+[node name="BGRedRight" type="TextureRect" parent="."]
+offset_left = 943.0
+offset_right = 1280.0
+offset_bottom = 1348.0
+texture = SubResource("AtlasTexture_f1p13")
+
+[node name="BorderRedRight1" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 946.0
+offset_right = 1279.0
+offset_bottom = 720.6328
+texture = SubResource("AtlasTexture_4obbf")
+
+[node name="BorderRedRight2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 947.0
+offset_right = 1280.0
+offset_bottom = 720.6328
+texture = SubResource("AtlasTexture_ovcoh")
+
+[node name="BGTextBox" type="ColorRect" parent="."]
+offset_top = 497.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.039215688, 0.039215688, 0.039215688, 0.73333335)
+
+[node name="NameBackground" type="TextureRect" parent="."]
+offset_top = 455.0
+offset_right = 1283.6571
+offset_bottom = 551.0
+texture = ExtResource("3_8dubc")
+
+[node name="CaseNumber" type="TextureRect" parent="."]
+offset_left = 25.0
+offset_top = 38.0
+offset_right = 230.0
+offset_bottom = 243.0
+texture = SubResource("AtlasTexture_gx4rg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_34ol3")
+}
+autoplay = "rotate_text"
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+color = Color(0.9372549, 0.19607843, 0.003921569, 0.5254902)
+polygon = PackedVector2Array(36, 160, 57, 136, 96, 96, 142, 55, 181, 26, 213, 4, 222, -4, 35, -3)
+
+[node name="BorderLeftRed" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -1.0
+offset_right = 332.0
+offset_bottom = 720.6328
+texture = SubResource("AtlasTexture_5dllo")
+
+[node name="LargeBar1" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 28.0
+offset_top = -32.0
+offset_right = 44.0
+offset_bottom = 463.0
+texture = SubResource("AtlasTexture_phcyf")
+
+[node name="LargeBar2" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 244.0
+offset_top = -30.0
+offset_right = 260.0
+offset_bottom = 473.0
+texture = SubResource("AtlasTexture_birbe")
+
+[node name="Text" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 562.0
+offset_right = 1003.0
+offset_bottom = 727.0
+theme_override_fonts/font = SubResource("FontVariation_34ol3")
+theme_override_font_sizes/font_size = 37
+text = "Hina seems the obvious candidate. After all, she just said she was in the dining hall..."
+autowrap_mode = 3
+
+[node name="Displayname" type="Label" parent="."]
+offset_left = 51.0
+offset_top = 470.0
+offset_right = 350.0
+offset_bottom = 534.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_kkkcx")
+theme_override_font_sizes/font_size = 44
+text = "Celeste"

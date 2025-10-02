@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxjchwh5imo6x"]
+
+[ext_resource type="Script" uid="uid://xcqqbpcg1pxh" path="res://scripts/trial_manager.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bdgppj0ar2edr" path="res://scenes/trial.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bpjfrql1enbnm" path="res://scenes/character_manager.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://c8ijkimbdxdmj" path="res://scenes/ui.tscn" id="4_1bvp3"]
+
+[sub_resource type="Animation" id="Animation_1bvp3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.27152088, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.8887174, -0.827)]
+}
+
+[sub_resource type="Animation" id="Animation_h2yge"]
+resource_name = "rotate_around"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lquwl"]
+_data = {
+&"RESET": SubResource("Animation_1bvp3"),
+&"rotate_around": SubResource("Animation_h2yge")
+}
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_h2yge")
+
+[node name="Trial" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9633641, 0.2681969, 0, -0.2681969, 0.9633641, 0, 0.8887174, -0.827)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_lquwl")
+}
+
+[node name="AsleepTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="CharacterManager" parent="." instance=ExtResource("3_272bh")]
+
+[node name="UI" parent="." instance=ExtResource("4_1bvp3")]
+
+[connection signal="timeout" from="AsleepTimer" to="." method="_on_asleep_timer_timeout"]
