@@ -507,7 +507,8 @@ transform = Transform3D(0.12999998, 0, 0, 0, 0.13, 0, 0, 0, 0.12999998, 0, 0, 0)
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Makoto"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0599537, -11)
 sorting_offset = 100.0
-alpha_cut = 1
+texture_filter = 0
+render_priority = 100
 sprite_frames = SubResource("SpriteFrames_0cbny")
 
 [node name="Head" type="Node3D" parent="Makoto"]
@@ -519,7 +520,8 @@ transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0, 0)
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hina"]
 transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 0.99999994, 0, -2.9802322e-08, 0, 0.99999994, -9.536743e-07, 5.1226983, -10.962832)
 sorting_offset = 100.0
-alpha_cut = 1
+texture_filter = 0
+render_priority = 100
 sprite_frames = SubResource("SpriteFrames_htgcl")
 
 [node name="Head" type="Node3D" parent="Hina"]
@@ -530,6 +532,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07760861, 7.521427, -11.48
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Hifumi"]
 transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, 0, 0.6548681, -1.425173)
 alpha_cut = 1
+texture_filter = 0
+render_priority = 100
 sprite_frames = SubResource("SpriteFrames_7n2pj")
 
 [node name="Head" type="Node3D" parent="Hifumi"]
