@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bt5iret3bockj"]
+[gd_scene load_steps=31 format=3 uid="uid://bt5iret3bockj"]
 
 [ext_resource type="PackedScene" uid="uid://bdgppj0ar2edr" path="res://scenes/trial.tscn" id="1_j8ivh"]
 [ext_resource type="Script" uid="uid://swh2sp1ju6bn" path="res://scripts/test_scene.gd" id="1_nd71p"]
@@ -237,15 +237,24 @@ _data = {
 &"new_animation": SubResource("Animation_nd71p")
 }
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_nd71p"]
+
+[sub_resource type="Sky" id="Sky_7ddre"]
+sky_material = SubResource("PhysicalSkyMaterial_nd71p")
+
+[sub_resource type="Environment" id="Environment_qjeyg"]
+background_mode = 2
+sky = SubResource("Sky_7ddre")
+
 [node name="TestScene" type="Node3D"]
 script = ExtResource("1_nd71p")
 
 [node name="Trial" parent="." instance=ExtResource("1_j8ivh")]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.13, -1.4511563, 0.60432917, 0)
-billboard = 2
-alpha_cut = 1
+transform = Transform3D(-0.0018627371, 0, 0.12998664, 0, 0.13, 0, -0.12998664, 0, -0.0018627371, -1.4511563, 0.60432917, 0)
+texture_filter = 0
+render_priority = 100
 sprite_frames = SubResource("SpriteFrames_nks25")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -258,3 +267,6 @@ libraries = {
 
 [node name="MakotosBigWackyHead" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4425085, 0.94353354, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qjeyg")
