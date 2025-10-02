@@ -1,3 +1,5 @@
+system: assign makoto:5 hifumi:01 hina:2
+
 camera: focus_on hina
 hina: expression excited
 hina: say But Makoto did it, didn't he? After all, the murder was commited in his room...

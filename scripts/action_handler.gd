@@ -29,3 +29,13 @@ func expression(actor: String, args: Array[String]) -> void:
 func say(actor: String, args: Array[String]) -> void:
 	var text := " ".join(args)
 	$"../UI".show_text(actor, text)
+
+func assign(_actor: String, args: Array[String]) -> void:
+	var seats = args.map(func(arg: String):
+		var character_and_position := arg.split(":")	
+		return {
+			"character": character_and_position[0],
+			"position": character_and_position[1]
+		}
+	)	
+	$"../CharacterManager".assign(seats)

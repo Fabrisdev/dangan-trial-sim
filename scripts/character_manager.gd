@@ -1,15 +1,4 @@
 extends Node3D
-
-@export var assignments := {
-	"Makoto": 1,
-	"Hifumi": 2,
-	"Hina": 3
-}
-
-func _ready():
-	for character in assignments.keys():
-		var stand = assignments[character]
-		get_node(character).rotation_degrees.y = stand * 22.5
 		
 func set_expression(actor: String, pose: String) -> void:
 	if actor == 'makoto':
@@ -24,3 +13,8 @@ func set_expression(actor: String, pose: String) -> void:
 			"angry": 15
 		}
 		$Hina/AnimatedSprite3D.frame = poses[pose]
+
+func assign(seats: Array):
+	for seat in seats:
+		var character_name = seat.character.capitalize()
+		get_node(character_name).rotation_degrees.y = float(seat.position) * 22.5
