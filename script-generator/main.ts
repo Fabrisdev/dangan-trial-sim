@@ -4,17 +4,15 @@ const hina = actor("hina");
 const makoto = actor("makoto");
 const hifumi = actor("hifumi");
 
-system.assign(hina, 0);
-system.assign(hifumi, 1);
-system.assign(makoto, 2);
+system.assign(hina, 0).assign(hifumi, 1).assign(makoto, 2);
 camera.focusOn(hina);
-hina.expression("excited");
-hina.say(
-	"But Makoto did it, didn't he? After all, the murder was commited in his room...",
-);
+hina
+	.expression("excited")
+	.say(
+		"But Makoto did it, didn't he? After all, the murder was commited in his room...",
+	);
 system.wait(2.5);
-hina.expression("angry");
-hina.say("You're just the worst!");
+hina.expression("angry").say("You're just the worst!");
 system.wait(2);
 camera.focusOn(makoto);
 makoto.say("fuck you hina hope you get killed soon");
@@ -23,12 +21,10 @@ camera.focusOn(hina);
 hina.say("yeah, BY YOU!");
 system.wait(1.5);
 camera.focusOn(makoto);
-makoto.expression("shoot");
-makoto.say("...");
+makoto.expression("shoot").say("...");
 system.wait(1);
 camera.focusOn(hifumi);
 hifumi.say("hey guys why dont we calm down a li-");
 system.wait(0.8);
 camera.focusOn(makoto);
-makoto.expression("you");
-makoto.say("SHUT THE FUCK UP");
+makoto.expression("you").say("SHUT THE FUCK UP");

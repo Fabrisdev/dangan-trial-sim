@@ -1,49 +1,21 @@
 import { writeFileSync } from "node:fs";
+import { Actor, Camera, System } from "./entities";
+import type { CharacterName } from "./types";
 
 const output: string[] = [];
+
+export function log(line: string) {
+	output.push(line);
+}
 
 process.on("exit", () => {
 	writeFileSync("output.trial", output.join("\n"), "utf-8");
 });
 
-type CharacterName =
-	| "hina"
-	| "makoto"
-	| "byakuya"
-	| "toko"
-	| "kyoko"
-	| "hifumi"
-	| "sakura"
-	| "leon"
-	| "celeste"
-	| "chihiro"
-	| "yasuhiro"
-	| "mondo"
-	| "kiyotaka";
+export const system = new System();
+export const camera = new Camera();
 
-type Character = {
-	name: CharacterName;
-	expression: (exp: Expression) => void;
-	say: (text: string) => void;
-};
-
-export const system = {
-	assign: (character: Character, seat: number) =>
-		output.push(`system: assign ${character.name}:${seat}`),
-	wait: (seconds: number) => output.push(`system: wait ${seconds}s`),
-};
-
-export const camera = {
-	focusOn: (character: Character) =>
-		output.push(`camera: focus_on ${character.name}`),
-};
-
-type Expression = "happy" | "sad" | "angry" | "excited" | "shoot" | "you"; //TODO: make the expression type depend on character type
-
-export function actor(name: CharacterName): Character {
-	return {
-		name,
-		expression: (exp: Expression) => output.push(`${name}: expression ${exp}`),
-		say: (text: string) => output.push(`${name}: say ${text}`),
-	};
+export function actor(name: CharacterName): Actor {
+	const character = new Actor(name);
+	return character;
 }
