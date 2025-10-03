@@ -1,4 +1,4 @@
-system: assign makoto:5 hifumi:01 hina:2
+system: assign yasuhiro:1 chihiro:2 byakuya:3 celeste:4 leon:5 toko:6 hifumi:7 makoto:8 kiyotaka:10 sakura:12 kyoko:13 mondo:14 hina:15
 
 camera: focus_on hina
 hina: expression excited
