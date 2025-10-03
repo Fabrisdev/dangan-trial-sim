@@ -1,25 +1,26 @@
-system: assign yasuhiro:1 chihiro:2 byakuya:3 celeste:4 leon:5 toko:6 hifumi:7 makoto:8 kiyotaka:10 sakura:12 kyoko:13 mondo:14 hina:15
-
+system: assign hina:0
+system: assign hifumi:1
+system: assign makoto:2
 camera: focus_on hina
 hina: expression excited
 hina: say But Makoto did it, didn't he? After all, the murder was commited in his room...
 system: wait 2.5s
 hina: expression angry
 hina: say You're just the worst!
-system: wait 1.5s
+system: wait 2s
 camera: focus_on makoto
 makoto: say fuck you hina hope you get killed soon
-_: wait 2s
+system: wait 2s
 camera: focus_on hina
 hina: say yeah, BY YOU!
-_: wait 1.5s
+system: wait 1.5s
 camera: focus_on makoto
 makoto: expression shoot
 makoto: say ...
-_: wait 1s
+system: wait 1s
 camera: focus_on hifumi
 hifumi: say hey guys why dont we calm down a li-
-_: wait 0.8s
+system: wait 0.8s
 camera: focus_on makoto
 makoto: expression you
 makoto: say SHUT THE FUCK UP

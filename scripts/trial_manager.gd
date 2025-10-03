@@ -1,5 +1,8 @@
 extends Node3D
 
+@export_file("*.trial")
+var trial_file: String
+
 var actions_node: Node = preload("uid://b7m08ec1cjdya").new()
 var is_sleeping := false
 
@@ -46,7 +49,10 @@ func extract_actor_and_action(line: String) -> Dictionary:
 	}
 	
 func read_trial_manager_file() -> String:
-	var file := FileAccess.open("res://my_trial.txt", FileAccess.READ)
+	if trial_file.is_empty():
+		push_error("No trial file provided. Please add one to the Main scene.")
+		return ""
+	var file := FileAccess.open(trial_file, FileAccess.READ)
 	var content := file.get_as_text()
 	return content
 

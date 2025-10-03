@@ -4,6 +4,9 @@ const hina = actor("hina");
 const makoto = actor("makoto");
 const hifumi = actor("hifumi");
 
+system.assign(hina, 0);
+system.assign(hifumi, 1);
+system.assign(makoto, 2);
 camera.focusOn(hina);
 hina.expression("excited");
 hina.say(

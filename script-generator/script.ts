@@ -3,7 +3,7 @@ import { writeFileSync } from "node:fs";
 const output: string[] = [];
 
 process.on("exit", () => {
-	writeFileSync("output.txt", output.join("\n"), "utf-8");
+	writeFileSync("output.trial", output.join("\n"), "utf-8");
 });
 
 type CharacterName =
