@@ -1,0 +1,20 @@
+{
+  "name": "script-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsx main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@types/node": "^24.6.2"
+  },
+  "dependencies": {
+    "tsx": "^4.20.6"
+  }
+}
