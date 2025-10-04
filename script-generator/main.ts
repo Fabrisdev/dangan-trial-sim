@@ -6,15 +6,13 @@ const makoto = actor("makoto", 1);
 const hifumi = actor("hifumi", 2);
 
 camera.focusOn(hina);
-makoto.expression();
-
 hina
-	.expression("excited")
+	.expression("yell")
 	.say(
 		"But Makoto did it, didn't he? After all, the murder was commited in his room...",
 	);
 system.wait(2.5);
-hina.expression("angry").say("You're just the worst!");
+hina.expression("mad").say("You're just the worst!");
 system.wait(2);
 camera.focusOn(makoto);
 makoto.say("fuck you hina hope you get killed soon");

@@ -1,5 +1,5 @@
 import { log, system } from "./script";
-import type { SeatId } from "./types";
+import type { HinaExpressions, MakotoExpressions, SeatId } from "./types";
 
 export class Actor {
 	expression(exp: string) {
@@ -17,7 +17,7 @@ class Makoto extends Actor {
 	/**
 	 * ![Makoto's expressions](expressions/makoto.png)
 	 */
-	expression(exp: "fists" | "uhh" | "what" | "but" | "think") {
+	expression(exp: MakotoExpressions) {
 		super.expression(exp);
 		return this;
 	}
@@ -25,9 +25,9 @@ class Makoto extends Actor {
 
 class Hina extends Actor {
 	/**
-	 * ![Hina's expressions](../sprites/Aoi.png)
+	 * ![Hina's expressions](expressions/Hina.png)
 	 */
-	expression(exp: "rage" | "what") {
+	expression(exp: HinaExpressions) {
 		super.expression(exp);
 		return this;
 	}
