@@ -53,7 +53,7 @@ export function actor<K extends keyof typeof actors>(
 	name: K,
 	seat?: SeatId,
 ): (typeof actors)[K] {
-	if (seat) system.assign(name, seat);
+	if (seat !== undefined) system.assign(name, seat);
 	return {
 		makoto: new Makoto(),
 		hina: new Hina(),
