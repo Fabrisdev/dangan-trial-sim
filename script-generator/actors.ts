@@ -37,7 +37,7 @@ class Hifumi extends Actor {
 	/**
 	 * ![Hifumi's expressions](../sprites/Hifumi.png)
 	 */
-	expression(exp: "rage" | "what") {
+	expression(exp: never) {
 		super.expression(exp);
 		return this;
 	}
