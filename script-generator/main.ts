@@ -1,11 +1,13 @@
-import { actor, camera, system } from "./script";
+import { actor } from "./actors";
+import { camera, system } from "./script";
 
-const hina = actor("hina");
-const makoto = actor("makoto");
-const hifumi = actor("hifumi");
+const hina = actor("hina", 0);
+const makoto = actor("makoto", 1);
+const hifumi = actor("hifumi", 2);
 
-system.assign(hina, 0).assign(hifumi, 1).assign(makoto, 2);
 camera.focusOn(hina);
+makoto.expression();
+
 hina
 	.expression("excited")
 	.say(

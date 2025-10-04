@@ -1,6 +1,5 @@
 import { writeFileSync } from "node:fs";
-import { Actor, Camera, System } from "./entities";
-import type { CharacterName } from "./types";
+import { Camera, System } from "./entities";
 
 const output: string[] = [];
 
@@ -14,8 +13,3 @@ process.on("exit", () => {
 
 export const system = new System();
 export const camera = new Camera();
-
-export function actor(name: CharacterName): Actor {
-	const character = new Actor(name);
-	return character;
-}
