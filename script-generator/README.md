@@ -38,3 +38,9 @@ hina.expression("eheh")
 hina.say("I'm Aoi Asahina. But my friends just call me Hina")
 ```
 For more examples please see the included `my_script.ts` file.
+## Build file
+After writing your script you can build it by running
+```bash
+npm run build file_name.ts
+```
+This will generate an `output.trial` file inside your `CWD` which you can then set as the script file inside Godot.
