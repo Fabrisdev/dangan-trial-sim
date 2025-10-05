@@ -13,16 +13,12 @@ hina
 	);
 system.wait(2.5);
 hina.expression("mad").say("You're just the worst!");
-system.wait(2);
 camera.focusOn(makoto);
 makoto.say("fuck you hina hope you get killed soon");
-system.wait(2);
 camera.focusOn(hina);
 hina.say("yeah, BY YOU!");
-system.wait(1.5);
 camera.focusOn(makoto);
 makoto.expression("shoot").say("...");
-system.wait(1);
 camera.focusOn(hifumi);
 hifumi.say("hey guys why dont we calm down a li-");
 system.wait(0.8);
