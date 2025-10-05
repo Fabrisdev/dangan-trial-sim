@@ -103,7 +103,7 @@ atlas = ExtResource("2_wm3ai")
 region = Rect2(1438, 8454, 16, 32)
 filter_clip = true
 
-[sub_resource type="FontVariation" id="FontVariation_34ol3"]
+[sub_resource type="FontVariation" id="FontVariation_wm3ai"]
 base_font = ExtResource("4_p7vwb")
 variation_embolden = 1.5
 
@@ -252,15 +252,15 @@ offset_right = 260.0
 offset_bottom = 473.0
 texture = SubResource("AtlasTexture_birbe")
 
-[node name="Text" type="Label" parent="."]
+[node name="Text" type="RichTextLabel" parent="."]
 offset_left = 51.0
-offset_top = 562.0
-offset_right = 1003.0
-offset_bottom = 727.0
-theme_override_fonts/font = SubResource("FontVariation_34ol3")
-theme_override_font_sizes/font_size = 37
-text = "Hina seems the obvious candidate. After all, she just said she was in the dining hall..."
-autowrap_mode = 3
+offset_top = 563.0
+offset_right = 1010.0
+offset_bottom = 733.0
+theme_override_fonts/normal_font = SubResource("FontVariation_wm3ai")
+theme_override_font_sizes/normal_font_size = 37
+bbcode_enabled = true
+text = "Hina seems the obvious candidate. After all, she just said she was in the dining hall"
 
 [node name="Displayname" type="Label" parent="."]
 offset_left = 51.0
