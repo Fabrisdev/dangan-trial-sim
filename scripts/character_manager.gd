@@ -1,18 +1,16 @@
 extends Node3D
+
+@export_file("*.json")
+var expressions_file: String
 		
 func set_expression(actor: String, pose: String) -> void:
-	if actor == 'makoto':
-		var poses := {
-			"shoot": 10,
-			"you": 4
-		}
-		$Makoto/AnimatedSprite3D.frame = poses[pose]
-	if actor == "hina":
-		var poses := {
-			"excited": 14,
-			"angry": 15
-		}
-		$Hina/AnimatedSprite3D.frame = poses[pose]
+	var file := FileAccess.open(expressions_file, FileAccess.READ)
+	var contents := file.get_as_text()
+	var expressions = JSON.parse_string(contents)
+	var actor_expressions = expressions[actor]
+	var frame = actor_expressions.find(pose)
+	var character_sprite = get_node(actor.capitalize() + '/AnimatedSprite3D')
+	character_sprite.frame = frame
 
 func assign(seats: Array):
 	for seat in seats:

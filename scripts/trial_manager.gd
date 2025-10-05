@@ -16,9 +16,9 @@ func start_manager(lines: Array[String]) -> void:
 	for line in lines:
 		if line.strip_edges() == '': continue
 		if line.begins_with("#"): continue
-		if is_sleeping:
-			await %AsleepTimer.timeout
-		execute_line(line)	
+		while is_sleeping:
+			await get_tree().process_frame	
+		execute_line(line)
 		
 func execute_line(line: String) -> void:
 	var actor_and_action := extract_actor_and_action(line)
@@ -29,8 +29,8 @@ func execute_line(line: String) -> void:
 func execute_action(actor: String, action: Dictionary) -> void:
 	var actions := {}
 	for method in actions_node.get_method_list():
-		var name = method['name']
-		actions[name] = Callable(actions_node, name)
+		var method_name = method['name']
+		actions[method_name] = Callable(actions_node, method_name)
 	actions[action.name].call(actor, action.args)
 	print("Executing: ", action.name, " with args: ", action.args)
 
@@ -59,7 +59,12 @@ func read_trial_manager_file() -> String:
 
 func _on_asleep_timer_timeout() -> void:
 	is_sleeping = false
+	pass
 
 func set_asleep(seconds: float):
 	is_sleeping = true
 	%AsleepTimer.start(seconds)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("click"):
+		is_sleeping = false

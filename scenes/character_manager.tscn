@@ -1962,6 +1962,7 @@ animations = [{
 
 [node name="CharacterManager" type="Node3D"]
 script = ExtResource("1_g8e28")
+expressions_file = "res://script-generator/expressions/expressions.json"
 
 [node name="Makoto" type="Node3D" parent="."]
 transform = Transform3D(0.12999998, 0, 0, 0, 0.13, 0, 0, 0, 0.12999998, 0, 0, 0)
