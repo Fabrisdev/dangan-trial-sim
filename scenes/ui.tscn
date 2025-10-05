@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c8ijkimbdxdmj"]
+[gd_scene load_steps=25 format=3 uid="uid://c8ijkimbdxdmj"]
 
 [ext_resource type="Script" uid="uid://dx63g61f43xax" path="res://scripts/ui_manager.gd" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="2_wm3ai"]
@@ -104,6 +104,10 @@ region = Rect2(1438, 8454, 16, 32)
 filter_clip = true
 
 [sub_resource type="FontVariation" id="FontVariation_wm3ai"]
+base_font = ExtResource("4_p7vwb")
+variation_embolden = 1.5
+
+[sub_resource type="FontVariation" id="FontVariation_8dubc"]
 base_font = ExtResource("4_p7vwb")
 variation_embolden = 1.5
 
@@ -258,7 +262,9 @@ offset_top = 563.0
 offset_right = 1010.0
 offset_bottom = 733.0
 theme_override_fonts/normal_font = SubResource("FontVariation_wm3ai")
+theme_override_fonts/bold_font = SubResource("FontVariation_8dubc")
 theme_override_font_sizes/normal_font_size = 37
+theme_override_font_sizes/bold_font_size = 37
 bbcode_enabled = true
 text = "Hina seems the obvious candidate. After all, she just said she was in the dining hall"
 

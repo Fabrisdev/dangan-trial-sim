@@ -1,4 +1,5 @@
-import { log, system } from "./script";
+import { system } from "./entities";
+import { log } from "./script";
 import type { HinaExpressions, MakotoExpressions, SeatId } from "./types";
 
 export class Actor {

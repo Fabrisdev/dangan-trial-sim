@@ -2,7 +2,7 @@ import type { Actor } from "./actors";
 import { log } from "./script";
 import type { CharacterName, SeatId } from "./types";
 
-export class System {
+class System {
 	assign(actor: Actor | CharacterName, seat: SeatId) {
 		log(
 			`system: assign ${typeof actor === "string" ? actor : actor.constructor.name.toLowerCase()}:${seat}`,
@@ -15,9 +15,13 @@ export class System {
 	}
 }
 
-export class Camera {
+class Camera {
 	focusOn(actor: Actor) {
 		log(`camera: focus_on ${actor.constructor.name.toLowerCase()}`);
 		return this;
 	}
 }
+
+export const camera = new Camera()
+export const system = new System()
+

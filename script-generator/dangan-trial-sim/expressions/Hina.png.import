@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ee72d8nbov4l"
-path="res://.godot/imported/Hina.png-a2d9dee31e1910dcf76f1b44fe01405e.ctex"
+path="res://.godot/imported/Hina.png-d6acf04e9d1f01e6fa03f0f297c0de8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://script-generator/expressions/Hina.png"
-dest_files=["res://.godot/imported/Hina.png-a2d9dee31e1910dcf76f1b44fe01405e.ctex"]
+source_file="res://script-generator/node_modules/dangan-trial-maker/expressions/Hina.png"
+dest_files=["res://.godot/imported/Hina.png-d6acf04e9d1f01e6fa03f0f297c0de8e.ctex"]
 
 [params]
 

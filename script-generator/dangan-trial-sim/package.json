@@ -1,0 +1,13 @@
+{
+  "name": "dangan-trial-maker",
+  "version": "1.0.0",
+  "description": "Create danganronpa 1 trials easily",
+  "main": "main.js",
+  "scripts": {
+    "build": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

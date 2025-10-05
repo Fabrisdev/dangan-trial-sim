@@ -1,20 +1,3 @@
 system: assign hina:0
-system: assign makoto:1
-system: assign hifumi:2
 camera: focus_on hina
-hina: expression yell
-hina: say But Makoto did it, didn't he? After all, the murder was commited in his room...
-hina: expression mad
-hina: say You're just the worst!
-camera: focus_on makoto
-makoto: say fuck you hina hope you get killed soon
-camera: focus_on hina
-hina: say yeah, BY YOU!
-camera: focus_on makoto
-makoto: expression shoot
-makoto: say ...
-camera: focus_on hifumi
-hifumi: say hey guys why dont we calm down a li-
-camera: focus_on makoto
-makoto: expression you
-makoto: say SHUT THE FUCK UP
+hina: say hola
