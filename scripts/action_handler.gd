@@ -29,6 +29,7 @@ func expression(actor: String, args: Array[String]) -> void:
 func say(actor: String, args: Array[String]) -> void:
 	var text := " ".join(args)
 	$"../UI".show_text(actor, text)
+	get_parent().set_asleep(-1)
 
 func assign(_actor: String, args: Array[String]) -> void:
 	var seats = args.map(func(arg: String):

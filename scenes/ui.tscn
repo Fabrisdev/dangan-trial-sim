@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8ijkimbdxdmj"]
+[gd_scene load_steps=24 format=3 uid="uid://c8ijkimbdxdmj"]
 
 [ext_resource type="Script" uid="uid://dx63g61f43xax" path="res://scripts/ui_manager.gd" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="2_wm3ai"]
 [ext_resource type="Texture2D" uid="uid://btl3cxi1i2a56" path="res://sprites/class_trial/name_background.png" id="3_8dubc"]
 [ext_resource type="FontFile" uid="uid://dq2i8fjiam0qn" path="res://fonts/SourceSans3-VariableFont_wght.ttf" id="4_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://cltiix4f6cooy" path="res://sprites/class_trial/buttons.png" id="5_wm3ai"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkkcx"]
 atlas = ExtResource("2_wm3ai")
@@ -110,6 +111,11 @@ variation_embolden = 1.5
 base_font = ExtResource("4_p7vwb")
 variation_embolden = 1.5
 variation_transform = Transform2D(1, 0, 0, 0.7, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dubc"]
+atlas = ExtResource("5_wm3ai")
+region = Rect2(230, 378, 100, 100)
+filter_clip = true
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_gdt2y")
@@ -265,3 +271,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_kkkcx")
 theme_override_font_sizes/font_size = 44
 text = "Celeste"
+
+[node name="MouseButton" type="TextureRect" parent="."]
+visible = false
+offset_left = 1081.0
+offset_top = 573.0
+offset_right = 1181.0
+offset_bottom = 673.0
+texture = SubResource("AtlasTexture_8dubc")

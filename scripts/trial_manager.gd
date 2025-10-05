@@ -5,6 +5,7 @@ var trial_file: String
 
 var actions_node: Node = preload("uid://b7m08ec1cjdya").new()
 var is_sleeping := false
+var can_skip := true
 
 func _ready() -> void:
 	add_child(actions_node)
@@ -59,12 +60,19 @@ func read_trial_manager_file() -> String:
 
 func _on_asleep_timer_timeout() -> void:
 	is_sleeping = false
+	can_skip = true
 	pass
 
+# Sets asleep line execution for any amount of time. Set to -1 to make it forever (till click)
 func set_asleep(seconds: float):
 	is_sleeping = true
-	%AsleepTimer.start(seconds)
+	if seconds != -1:
+		can_skip = false
+		%AsleepTimer.start(seconds)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click") and can_skip:
 		is_sleeping = false
+
+func set_can_skip(_can_skip: bool) -> void:
+	can_skip = _can_skip

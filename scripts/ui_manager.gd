@@ -9,6 +9,8 @@ const actors_to_names := {
 
 
 func show_text(actor: String, text: String) -> void:
+	get_parent().set_can_skip(false)
+	$MouseButton.visible = false
 	show_face(actor)
 	$Displayname.text = actors_to_names[actor]
 	var text_to_show := ""
@@ -25,6 +27,8 @@ func show_text(actor: String, text: String) -> void:
 			text_to_show += letter
 			$Text.text = text_to_show.strip_edges()
 			await get_tree().create_timer(text_speed).timeout
+	get_parent().set_can_skip(true)
+	$MouseButton.visible = true
 	
 func show_face(actor: String) -> void:
 	var actor_to_face_id := {
