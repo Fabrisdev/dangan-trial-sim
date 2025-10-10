@@ -16,5 +16,5 @@ func _process(_delta: float) -> void:
 	if ImGui.SliderFloat("Distance", distance_x, -1, 6):
 		$"../Camera3D".position.x = distance_x[0]
 	if ImGui.Checkbox('Move camera freely', move_camera_freely):
-		pass
+		$"../Camera3D".move_camera_freely(move_camera_freely[0])
 	ImGui.End()
