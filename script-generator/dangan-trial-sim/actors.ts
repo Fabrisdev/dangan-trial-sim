@@ -47,6 +47,7 @@ class Hifumi extends Actor {
 
 class Narrator {
 	say(...text: string[]) {
+		log("camera: set_narrator_view");
 		log(`narrator: say ${narrate(text.join(""))}`);
 		return this;
 	}

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxjchwh5imo6x"]
+[gd_scene load_steps=9 format=3 uid="uid://cxjchwh5imo6x"]
 
 [ext_resource type="Script" uid="uid://xcqqbpcg1pxh" path="res://scripts/trial_manager.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bdgppj0ar2edr" path="res://scenes/trial.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bpjfrql1enbnm" path="res://scenes/character_manager.tscn" id="3_272bh"]
+[ext_resource type="Script" uid="uid://bfsup2lr1fjya" path="res://scripts/camera_handler.gd" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c8ijkimbdxdmj" path="res://scenes/ui.tscn" id="4_1bvp3"]
 
 [sub_resource type="Animation" id="Animation_1bvp3"]
@@ -62,8 +63,10 @@ trial_file = "res://script-generator/output.trial"
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9633641, 0.2681969, 0, -0.2681969, 0.9633641, 0, 0.8887174, -0.827)
+script = ExtResource("3_lquwl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_lquwl")
 }

@@ -20,7 +20,7 @@ func focus_on(_actor: String, args: Array[String]) -> void:
 	
 
 func rotate_around(_actor: String, _args: Array[String]) -> void:
-	$"../AnimationPlayer".play('rotate_around')
+	$"../Camera3D".rotate_around()
 	
 func expression(actor: String, args: Array[String]) -> void:
 	var pose = args[0]
@@ -40,3 +40,6 @@ func assign(_actor: String, args: Array[String]) -> void:
 		}
 	)	
 	$"../CharacterManager".assign(seats)
+	
+func set_narrator_view(_actor: String, _args: Array[String]) -> void:
+	$"../Camera3D".narrator_view()
