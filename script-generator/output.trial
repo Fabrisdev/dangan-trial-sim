@@ -1,3 +1,4 @@
+system: show_debug
 system: assign yasuhiro:1
 system: assign chihiro:2
 system: assign byakuya:3

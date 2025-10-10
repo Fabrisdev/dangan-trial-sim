@@ -1,6 +1,7 @@
 import { actor, camera, system } from "dangan-trial-maker";
 import { bold, narrate, think } from "dangan-trial-maker/bb";
 
+system.debug();
 const narrator = actor("narrator");
 system.assign("yasuhiro", 1);
 system.assign("chihiro", 2);

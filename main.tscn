@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxjchwh5imo6x"]
+[gd_scene load_steps=10 format=3 uid="uid://cxjchwh5imo6x"]
 
 [ext_resource type="Script" uid="uid://xcqqbpcg1pxh" path="res://scripts/trial_manager.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bdgppj0ar2edr" path="res://scenes/trial.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bpjfrql1enbnm" path="res://scenes/character_manager.tscn" id="3_272bh"]
 [ext_resource type="Script" uid="uid://bfsup2lr1fjya" path="res://scripts/camera_handler.gd" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c8ijkimbdxdmj" path="res://scenes/ui.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bhwvj2wfcc5nx" path="res://scripts/debug_manager.gd" id="6_7mycd"]
 
 [sub_resource type="Animation" id="Animation_1bvp3"]
 length = 0.001
@@ -77,5 +78,8 @@ unique_name_in_owner = true
 [node name="CharacterManager" parent="." instance=ExtResource("3_272bh")]
 
 [node name="UI" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="DebugWindow" type="Node3D" parent="."]
+script = ExtResource("6_7mycd")
 
 [connection signal="timeout" from="AsleepTimer" to="." method="_on_asleep_timer_timeout"]

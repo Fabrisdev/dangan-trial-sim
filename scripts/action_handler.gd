@@ -43,3 +43,7 @@ func assign(_actor: String, args: Array[String]) -> void:
 	
 func set_narrator_view(_actor: String, _args: Array[String]) -> void:
 	$"../Camera3D".narrator_view()
+
+func show_debug(_actor: String, _args: Array[String]) -> void:
+	$"../DebugWindow".show_debug_window()
+	

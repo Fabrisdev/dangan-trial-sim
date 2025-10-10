@@ -13,6 +13,9 @@ class System {
 		log(`system: wait ${seconds}s`);
 		return this;
 	}
+	debug() {
+		log("system: show_debug");
+	}
 }
 
 class Camera {
@@ -22,6 +25,5 @@ class Camera {
 	}
 }
 
-export const camera = new Camera()
-export const system = new System()
-
+export const camera = new Camera();
+export const system = new System();
