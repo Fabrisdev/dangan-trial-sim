@@ -29,7 +29,8 @@ export type CharacterName =
 	| "chihiro"
 	| "yasuhiro"
 	| "mondo"
-	| "kiyotaka";
+	| "kiyotaka"
+	| "narrator";
 
 export type MakotoExpressions =
 	| "fists"

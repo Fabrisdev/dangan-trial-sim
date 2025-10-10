@@ -1,3 +1,4 @@
+import { narrate } from "./bb";
 import { system } from "./entities";
 import { log } from "./script";
 import type { HinaExpressions, MakotoExpressions, SeatId } from "./types";
@@ -8,8 +9,8 @@ export class Actor {
 		return this;
 	}
 
-	say(text: string) {
-		log(`${this.constructor.name.toLowerCase()}: say ${text}`);
+	say(...text: string[]) {
+		log(`${this.constructor.name.toLowerCase()}: say ${text.join("")}`);
 		return this;
 	}
 }
@@ -44,10 +45,18 @@ class Hifumi extends Actor {
 	}
 }
 
+class Narrator {
+	say(...text: string[]) {
+		log(`narrator: say ${narrate(text.join(""))}`);
+		return this;
+	}
+}
+
 const actors = {
 	makoto: new Makoto(),
 	hina: new Hina(),
 	hifumi: new Hifumi(),
+	narrator: new Narrator(),
 };
 
 export function actor<K extends keyof typeof actors>(
@@ -55,9 +64,5 @@ export function actor<K extends keyof typeof actors>(
 	seat?: SeatId,
 ): (typeof actors)[K] {
 	if (seat !== undefined) system.assign(name, seat);
-	return {
-		makoto: new Makoto(),
-		hina: new Hina(),
-		hifumi: new Hifumi(),
-	}[name];
+	return actors[name];
 }

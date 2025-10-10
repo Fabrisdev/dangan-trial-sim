@@ -3,17 +3,17 @@ function color(color: string, text: string) {
 }
 
 export function bold(...text: string[]) {
-	return color("yellow", text.join(" "));
+	return color("yellow", text.join(""));
 }
 
 export function narrate(...text: string[]) {
-	return color("green", text.join(" "));
+	return color("green", text.join(""));
 }
 
 export function think(...text: string[]) {
-	return color("blue", text.join(" "));
+	return color("blue", text.join(""));
 }
 
 export function normal(...text: string[]) {
-	return color("white", text.join(" "));
+	return color("white", text.join(""));
 }
