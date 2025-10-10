@@ -65,18 +65,22 @@ func show_face(actor: String) -> void:
 	$Face.texture.region = Rect2(final_pos.x, final_pos.y, face_dimensions.x, face_dimensions.y)
 	
 func show_face_ui(show_face: bool) -> void:
-	$RotatingText.visible = show_face
-	$Face.visible = show_face
-	$BorderLeftRed.visible = show_face
-	$LargeBar1.visible = show_face
-	$LargeBar2.visible = show_face
-	$BorderRedRight1.visible = show_face
-	$BorderRedRight2.visible = show_face
-	$BGRedRight.visible = show_face
-	$PolygonBackgroundColor.visible = show_face
-	$Polygon2D.visible = show_face
-	$CaseNumber.visible = show_face
-	$BorderRightRed.visible = show_face
-	$LeftRed.visible = show_face
-	$BackgroundLeftRed.visible = show_face
-	$Polygon2D2.visible = show_face
+	var ui_nodes = [
+		$RotatingText, 
+		$Face, 
+		$BorderLeftRed, 
+		$LargeBar1, 
+		$LargeBar2, 
+		$BorderRedRight1, 
+		$BorderRedRight2,
+		$BGRedRight,
+		$PolygonBackgroundColor,
+		$Polygon2D,
+		$CaseNumber,
+		$BorderRightRed,
+		$LeftRed,
+		$BackgroundLeftRed,
+		$Polygon2D2
+	]
+	for node in ui_nodes:
+		node.visible = show_face
