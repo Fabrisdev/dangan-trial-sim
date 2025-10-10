@@ -27,23 +27,20 @@ func show_text(actor: String, text: String) -> void:
 			text_to_show += "\n"
 		else:
 			text_to_show += " "
-		##aqui pasteo su codigo
-		var style_check:bool #para saber en que momento es que hay un estilo
+		var is_bb_code = false
 		$Text.text = word
-		var style_todo:String #Tomará el string cuando style_check esté activo
+		var bb_code = ""
 		for letter in word:
-			if letter == '[':
-				style_check=true
+			if letter == '[': is_bb_code = true
 			$Text.text = text_to_show.strip_edges()
-			if style_check: # llenando el formato de estilos
-				style_todo += letter
+			if is_bb_code: bb_code += letter
 			else: 
 				text_to_show += letter
 				await get_tree().create_timer(text_speed).timeout
-			if letter == ']': #si se detecta el inicio de corchetes con los estilos activos
-				text_to_show += style_todo
-				style_check=false
-				style_todo = '' #cuando ponga el estilo,borrará formato
+			if letter == ']':
+				text_to_show += bb_code
+				is_bb_code = false
+				bb_code = ''
 	get_parent().set_can_skip(true)
 	$MouseButton.visible = true
 	
