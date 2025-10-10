@@ -3,19 +3,19 @@ import { bold, narrate, think } from "dangan-trial-maker/bb";
 
 system.debug();
 const narrator = actor("narrator");
-system.assign("yasuhiro", 1);
-system.assign("chihiro", 2);
-system.assign("byakuya", 3);
-system.assign("celeste", 4);
-system.assign("leon", 5);
-system.assign("toko", 6);
-system.assign("hifumi", 7);
+system.assign("hina", 1);
+system.assign("mondo", 2);
+system.assign("kyoko", 3);
+system.assign("sakura", 4);
+system.assign("kiyotaka", 6);
 system.assign("makoto", 8);
-system.assign("kiyotaka", 10);
-system.assign("sakura", 12);
-system.assign("kyoko", 13);
-system.assign("mondo", 14);
-system.assign("hina", 15);
+system.assign("hifumi", 9);
+system.assign("toko", 10);
+system.assign("leon", 11);
+system.assign("celeste", 12);
+system.assign("chihiro", 13);
+system.assign("byakuya", 14);
+system.assign("yasuhiro", 15);
 
 narrator.say(
 	"You'll have to rely on your own ",

@@ -1,16 +1,16 @@
 system: show_debug
-system: assign yasuhiro:1
-system: assign chihiro:2
-system: assign byakuya:3
-system: assign celeste:4
-system: assign leon:5
-system: assign toko:6
-system: assign hifumi:7
+system: assign hina:1
+system: assign mondo:2
+system: assign kyoko:3
+system: assign sakura:4
+system: assign kiyotaka:6
 system: assign makoto:8
-system: assign kiyotaka:10
-system: assign sakura:12
-system: assign kyoko:13
-system: assign mondo:14
-system: assign hina:15
+system: assign hifumi:9
+system: assign toko:10
+system: assign leon:11
+system: assign celeste:12
+system: assign chihiro:13
+system: assign byakuya:14
+system: assign yasuhiro:15
 camera: set_narrator_view
 narrator: say [color=green]You'll have to rely on your own [color=yellow]logic[/color] to determine which weak spots are actually [color=yellow]lies or contradictions[/color].[/color]
