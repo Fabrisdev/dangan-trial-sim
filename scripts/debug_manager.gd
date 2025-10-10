@@ -2,7 +2,6 @@ extends Node3D
 
 var should_show_debug = false
 var fov = [0]
-var distance_x = [0]
 var move_camera_freely = [false]
 
 func show_debug_window():
@@ -19,8 +18,6 @@ func _process(_delta: float) -> void:
 	ImGui.SeparatorText("Camera")
 	if ImGui.SliderFloat("FOV", fov, 0, 180):
 		camera.fov = fov[0]
-	if ImGui.SliderFloat("Distance", distance_x, -1, 6):
-		camera.position.x = distance_x[0]
 	if ImGui.Checkbox('Move freely', move_camera_freely):
 		camera.move_camera_freely(move_camera_freely[0])
 	ImGui.Text('Position: ' + str(camera.position))
