@@ -45,6 +45,10 @@ func show_text(actor: String, text: String) -> void:
 	$MouseButton.visible = true
 	
 func show_face(actor: String) -> void:
+	if actor == 'narrator':
+		show_face_ui(false)
+		return
+	show_face_ui(true)
 	var actor_to_face_id := {
 		"makoto": 0,
 		"narrator": 0,
@@ -59,3 +63,20 @@ func show_face(actor: String) -> void:
 	var position_in_grid := Vector2(face_id % rows, face_id / rows)
 	var final_pos := position_in_grid * face_dimensions + position_in_grid * spacing + starting_pos
 	$Face.texture.region = Rect2(final_pos.x, final_pos.y, face_dimensions.x, face_dimensions.y)
+	
+func show_face_ui(show_face: bool) -> void:
+	$RotatingText.visible = show_face
+	$Face.visible = show_face
+	$BorderLeftRed.visible = show_face
+	$LargeBar1.visible = show_face
+	$LargeBar2.visible = show_face
+	$BorderRedRight1.visible = show_face
+	$BorderRedRight2.visible = show_face
+	$BGRedRight.visible = show_face
+	$PolygonBackgroundColor.visible = show_face
+	$Polygon2D.visible = show_face
+	$CaseNumber.visible = show_face
+	$BorderRightRed.visible = show_face
+	$LeftRed.visible = show_face
+	$BackgroundLeftRed.visible = show_face
+	$Polygon2D2.visible = show_face

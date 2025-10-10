@@ -146,13 +146,6 @@ scale = Vector2(1.0455977, 1)
 color = Color(0.9372549, 0.09019608, 0.09803922, 1)
 polygon = PackedVector2Array(233.64957, 16, 241, 9, 241.9188, 474, 138.09401, 468, 31.51282, 463, 45.29487, 342, 67.34615, 259, 83.88461, 226, 109.611115, 167, 129.82478, 137, 144.52563, 115, 171.17094, 81, 195.97864, 51, 207.92308, 41)
 
-[node name="ColorRect7" type="ColorRect" parent="."]
-visible = false
-offset_left = 181.0
-offset_right = 206.0
-offset_bottom = 20.0
-color = Color(0.99912435, 0.22291619, 0.03332304, 1)
-
 [node name="Face" type="TextureRect" parent="."]
 offset_left = 39.0
 offset_top = 33.746826
