@@ -8,13 +8,20 @@ var move_camera_freely = [false]
 func show_debug_window():
 	should_show_debug = true
 
+func _ready() -> void:
+	var camera = $"../Camera3D"
+	fov[0] = camera.fov
+
 func _process(_delta: float) -> void:
 	if not should_show_debug: return
+	var camera = $"../Camera3D"
 	ImGui.Begin("Debug window")
+	ImGui.SeparatorText("Camera")
 	if ImGui.SliderFloat("FOV", fov, 0, 180):
-		$"../Camera3D".fov = fov[0]
+		camera.fov = fov[0]
 	if ImGui.SliderFloat("Distance", distance_x, -1, 6):
-		$"../Camera3D".position.x = distance_x[0]
-	if ImGui.Checkbox('Move camera freely', move_camera_freely):
-		$"../Camera3D".move_camera_freely(move_camera_freely[0])
+		camera.position.x = distance_x[0]
+	if ImGui.Checkbox('Move freely', move_camera_freely):
+		camera.move_camera_freely(move_camera_freely[0])
+	ImGui.Text('Position: ' + str(camera.position))
 	ImGui.End()
