@@ -7,10 +7,6 @@ cd script-generator #or from wherever you are
 ```bash
 npm install
 ```
-3. Link the library to where your scripts are located
-```bash
-npm link dangan-trial-sim
-```
 
 # Usage instructions
 From there you can start making your own scripts. Start by creating a new Typescript file inside the project's folder.
