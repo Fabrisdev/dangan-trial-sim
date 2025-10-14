@@ -17,6 +17,7 @@ system.assign("chihiro", 13);
 system.assign("byakuya", 14);
 system.assign("yasuhiro", 15);
 
+system.play("user://underground.mp3");
 narrator.say(
 	"You'll have to rely on your own ",
 	bold("logic"),
@@ -24,3 +25,7 @@ narrator.say(
 	bold("lies or contradictions"),
 	".",
 );
+system.play("user://underground.mp3");
+narrator.say("hello????????????????");
+system.play("user://underground.mp3");
+narrator.say("you hear me my guy?");

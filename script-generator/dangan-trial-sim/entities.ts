@@ -16,6 +16,15 @@ class System {
 	debug() {
 		log("system: show_debug");
 	}
+	/**
+	 * Plays any audio track. Supports WAV, OGG and MP3 audio.
+	 * Either use a global path or user:// and store it in Godot's user data folder. For more information read https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html
+	 * Note: It's recommended to preload the audio first with system.preload()
+	 * @param audioPath Path to the audio track.
+	 */
+	play(audioPath: string) {
+		log(`system: play ${audioPath}`);
+	}
 }
 
 class Camera {
