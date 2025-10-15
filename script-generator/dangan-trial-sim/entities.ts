@@ -20,19 +20,17 @@ class System<Tags extends string = never> {
 		return this;
 	}
 	/**
-	 * Plays any audio track. Supports WAV, OGG and MP3 audio.
-	 * Either use a global path or user:// and store it in Godot's user data folder. For more information read https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html
-	 * Note: It's recommended to preload the audio first with system.preload()
-	 * @param audioPath Path to the audio track.
+	 * Plays any already preloaded audio track. Supports WAV, OGG and MP3 audio.
+	 * @param audioTag Tag to the audio track.
 	 */
-	play(audioPath: Tags) {
-		log(`system: play ${this.preloadedFiles[audioPath]}`);
+	play(audioTag: Tags) {
+		log(`system: play ${this.preloadedFiles[audioTag]}`);
 		return this;
 	}
 
 	/**
 	 * Preloads any file into the game.
-	 * @param path Path to the file.
+	 * @param path Path to the file. Either use a global path or user:// and store it in Godot's user data folder. For more information read https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html
 	 * @param tag Tag for the file path. You'll have to use it later when referring to it.
 	 * @returns
 	 */
