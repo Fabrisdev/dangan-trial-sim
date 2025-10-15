@@ -43,8 +43,9 @@ func assign(_actor: String, args: Array[String]) -> void:
 	)	
 	$"../CharacterManager".assign(seats)
 	
-func set_narrator_view(_actor: String, _args: Array[String]) -> void:
-	$"../Camera3D".narrator_view()
+func set_narrator_view(_actor: String, args: Array[String]) -> void:
+	var value := args[0]
+	$"../Camera3D".narrator_view(value == "true")
 
 func show_debug(_actor: String, _args: Array[String]) -> void:
 	$"../DebugWindow".show_debug_window()
@@ -84,3 +85,6 @@ func preload_file(_actor: String, args: Array[String]) -> void:
 	var file := FileAccess.open(file_path, FileAccess.READ)
 	var bytes := file.get_buffer(file.get_length())
 	preloaded_files[file_path] = bytes
+
+func stop_tracks(_actor: String, _args: Array[String]) -> void:
+	$"../AudioStreamPlayer".stop()

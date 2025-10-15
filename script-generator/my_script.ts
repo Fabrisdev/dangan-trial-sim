@@ -56,4 +56,5 @@ camera.narratorView(() => {
 	return makoto;
 });
 
+system.stopTracks();
 makoto.say("Hola de nuevo");

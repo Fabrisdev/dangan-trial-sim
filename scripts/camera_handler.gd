@@ -1,12 +1,13 @@
 extends Camera3D
 
 var is_free_camera_movement_allowed = false
+var narrator_view_enabled = false
 
 func rotate_around():
 	$AnimationPlayer.play('rotate_around')
 
-func narrator_view():
-	$AnimationPlayer.play('rotate_around')
+func narrator_view(value: bool):
+	narrator_view_enabled = value
 	
 func move_camera_freely(free_movement_allowed):
 	is_free_camera_movement_allowed = free_movement_allowed
@@ -76,7 +77,19 @@ func _input(event):
 				_alt = event.pressed
 
 # Updates mouselook and movement every frame
+var angle := 0.0
 func _process(delta):
+	if narrator_view_enabled:
+		var radius := 1.7
+		var speed := 0.2
+		var height := 2.15
+		fov = 40
+		angle -= speed * delta
+		var x = cos(angle) * radius
+		var z = sin(angle) * radius
+		var y = height
+		global_transform.origin = Vector3(x, y, z)
+		look_at(Vector3(0, 1, 0), Vector3.UP)
 	_update_mouselook()
 	_update_movement(delta)
 

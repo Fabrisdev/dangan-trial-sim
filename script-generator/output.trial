@@ -25,4 +25,5 @@ narrator: say [color=green]What I'm trying to say is, not all weak spots you see
 narrator: say [color=green]You'll have to rely on your own [color=yellow]logic[/color] to determine which weak spots are actually [color=yellow]lies or contradictions[/color].[/color]
 camera: focus_on makoto
 camera: set_narrator_view false
+system: stop_tracks
 makoto: say [color=white]Hola de nuevo[/color]
