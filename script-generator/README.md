@@ -43,20 +43,20 @@ This will generate an `output.trial` file inside your `CWD` which you can then s
 
 # Extra
 Here's some extra stuff you might find useful.
-## Order of characters in Danganronpa
-This is the real order in which the characters sit in DR1 (first class trial). You can just copy and paste this into your script if you wish to correctly replicate where they sit.
-```ts
-system.assign("hina", 1);
-system.assign("mondo", 2);
-system.assign("kyoko", 3);
-system.assign("sakura", 4);
-system.assign("kiyotaka", 6);
-system.assign("makoto", 8);
-system.assign("hifumi", 9);
-system.assign("toko", 10);
-system.assign("leon", 11);
-system.assign("celeste", 12);
-system.assign("chihiro", 13);
-system.assign("byakuya", 14);
-system.assign("yasuhiro", 15);
-```
+- ## Order of characters in Danganronpa
+  This is the real order in which the characters sit in DR1 (first class trial). You can just copy and paste this into your script if you wish to correctly replicate where they sit.
+  ```ts
+  system.assign("hina", 1);
+  system.assign("mondo", 2);
+  system.assign("kyoko", 3);
+  system.assign("sakura", 4);
+  system.assign("kiyotaka", 6);
+  system.assign("makoto", 8);
+  system.assign("hifumi", 9);
+  system.assign("toko", 10);
+  system.assign("leon", 11);
+  system.assign("celeste", 12);
+  system.assign("chihiro", 13);
+  system.assign("byakuya", 14);
+  system.assign("yasuhiro", 15);
+  ```
