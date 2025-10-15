@@ -11,7 +11,7 @@ export function narrate(...text: string[]) {
 }
 
 export function think(...text: string[]) {
-	return color("blue", text.join(""));
+	return color("#49aec5", text.join(""));
 }
 
 export function normal(...text: string[]) {

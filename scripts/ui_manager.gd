@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-var regex := RegEx.new()
-
 @export var text_speed = 0.015
 const actors_to_names := {
 	"hina": "Aoi Asahina",
@@ -12,7 +10,6 @@ const actors_to_names := {
 
 
 func show_text(actor: String, text: String) -> void:
-	regex.compile("\\[color=.*?\\](.*?)\\[/color\\]")
 	get_parent().set_can_skip(false)
 	$MouseButton.visible = false
 	show_face(actor)

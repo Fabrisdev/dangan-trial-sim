@@ -1,4 +1,4 @@
-import { narrate } from "./bb";
+import { narrate, normal, think } from "./bb";
 import { system } from "./entities";
 import { log } from "./script";
 import type { HinaExpressions, MakotoExpressions, SeatId } from "./types";
@@ -10,7 +10,7 @@ export class Actor {
 	}
 
 	say(...text: string[]) {
-		log(`${this.constructor.name.toLowerCase()}: say ${text.join("")}`);
+		log(`${this.constructor.name.toLowerCase()}: say ${normal(text.join(""))}`);
 		return this;
 	}
 }
@@ -21,6 +21,11 @@ class Makoto extends Actor {
 	 */
 	expression(exp: MakotoExpressions) {
 		super.expression(exp);
+		return this;
+	}
+
+	think(...text: string[]) {
+		log(`${this.constructor.name.toLowerCase()}: say ${think(text.join(""))}`);
 		return this;
 	}
 }

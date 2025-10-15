@@ -1,11 +1,10 @@
-system: preload_file user://underground.mp3
 system: show_debug
+system: preload_file user://underground.mp3
 system: assign hina:1
 system: assign mondo:2
 system: assign kyoko:3
 system: assign sakura:4
 system: assign kiyotaka:6
-system: assign makoto:8
 system: assign hifumi:9
 system: assign toko:10
 system: assign leon:11
@@ -13,12 +12,14 @@ system: assign celeste:12
 system: assign chihiro:13
 system: assign byakuya:14
 system: assign yasuhiro:15
+system: assign makoto:8
+camera: focus_on makoto
+makoto: expression hm
+makoto: say [color=#49aec5]I almost didn't notice it at first, but...is that the key point here?[/color]
+camera: set_narrator_view
 system: play user://underground.mp3 loop
-camera: set_narrator_view
+narrator: say [color=green]There's a [color=yellow]bit more to learn[/color] about Nonstop Debates. Would you like to hear more?[/color]
+narrator: say [color=green]From here on out, the number of weak spots will start going up.[/color]
+narrator: say [color=green]But no matter how many weak spots, there's essentially only one [color=yellow]lie or contradiction[/color] in that debate.[/color]
+narrator: say [color=green]What I'm trying to say is, not all weak spots you see are necessarily false.[/color]
 narrator: say [color=green]You'll have to rely on your own [color=yellow]logic[/color] to determine which weak spots are actually [color=yellow]lies or contradictions[/color].[/color]
-system: play user://underground.mp3 
-camera: set_narrator_view
-narrator: say [color=green]hello????????????????[/color]
-system: play user://underground.mp3 
-camera: set_narrator_view
-narrator: say [color=green]you hear me my guy?[/color]
