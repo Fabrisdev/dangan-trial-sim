@@ -28,9 +28,12 @@ system.assign(makoto, 0) //Sit him in the first seat
 There's two ways to ask a question in-game. You can either do this
 ```ts
 import { actor, system } from 'dangan-trial-sim'
+
 const narrator = actor('narrator')
 narrator.say('What do you think? Will you do it?')
+
 const answer = system.ask(['Yes', 'No'])
+
 system.if(answer, "Yes", () => {
   narrator.say('Thank you!')
 })
@@ -41,9 +44,12 @@ system.if(answer, "No", () => {
 Or... you can just directly use Javascript's IF statement!
 ```ts
 import { actor, system } from 'dangan-trial-sim'
+
 const narrator = actor('narrator')
 narrator.say('What do you think? Will you do it?')
+
 const answer = system.ask(['Yes', 'No'])
+
 if(answer === 'Yes'){
   narrator.say('Thank you!')
 }else{
