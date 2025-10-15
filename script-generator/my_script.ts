@@ -21,7 +21,9 @@ system.assign("chihiro", 13);
 system.assign("byakuya", 14);
 system.assign("yasuhiro", 15);
 
-system.play("underground_theme");
+system.play("underground_theme", {
+	loop: true,
+});
 narrator.say(
 	"You'll have to rely on your own ",
 	bold("logic"),

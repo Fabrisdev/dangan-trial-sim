@@ -23,8 +23,10 @@ class System<Tags extends string = never> {
 	 * Plays any already preloaded audio track. Supports WAV, OGG and MP3 audio.
 	 * @param audioTag Tag to the audio track.
 	 */
-	play(audioTag: Tags) {
-		log(`system: play ${this.preloadedFiles[audioTag]}`);
+	play(audioTag: Tags, options?: AudioOptions) {
+		log(
+			`system: play ${this.preloadedFiles[audioTag]} ${options?.loop ? "loop" : ""}`,
+		);
 		return this;
 	}
 
@@ -50,3 +52,7 @@ class Camera {
 
 export const camera = new Camera();
 export const system = new System();
+
+type AudioOptions = {
+	loop: boolean;
+};
