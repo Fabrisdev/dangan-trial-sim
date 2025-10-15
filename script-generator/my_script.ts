@@ -31,7 +31,5 @@ narrator.say(
 	bold("lies or contradictions"),
 	".",
 );
-system.play("underground_theme");
 narrator.say("hello????????????????");
-system.play("underground_theme");
 narrator.say("you hear me my guy?");
