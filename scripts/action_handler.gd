@@ -1,5 +1,7 @@
 extends Node
 
+var preloaded_files = {}
+
 func wait(_actor: String, args: Array[String]) -> void:
 	var amount_with_s := args[0]
 	var amount := amount_with_s.substr(0, amount_with_s.length() - 1)
@@ -47,3 +49,38 @@ func set_narrator_view(_actor: String, _args: Array[String]) -> void:
 func show_debug(_actor: String, _args: Array[String]) -> void:
 	$"../DebugWindow".show_debug_window()
 	
+func play(_actor: String, args: Array[String]) -> void:
+	var file_path := args[0]
+	var bytes: PackedByteArray
+	if preloaded_files.has(file_path):
+		bytes = preloaded_files[file_path]
+	else:
+		var file = FileAccess.open(file_path, FileAccess.READ)
+		bytes = file.get_buffer(file.get_length())
+		preloaded_files[file_path] = bytes
+		push_warning('Consider preloading the file to avoid rereading it and have faster load times. ('+file_path+')')
+	var stream: AudioStream
+	var lower_path := file_path.to_lower()
+	if lower_path.ends_with(".mp3"):
+		stream = AudioStreamMP3.new()
+		stream.data = bytes
+	elif lower_path.ends_with(".ogg"):
+		stream = AudioStreamOggVorbis.new()
+		stream.data = bytes
+	elif lower_path.ends_with(".wav"):
+		var wav = AudioStreamWAV.new()
+		wav.data = bytes
+		stream = wav
+	else:
+		push_error("Unsupported audio format. Available formats are [mp3, ogg, wav] (" + file_path + ")")
+		return
+	if args.has('loop'):
+		stream.loop = true
+	$"../AudioStreamPlayer".stream = stream
+	$"../AudioStreamPlayer".play()
+
+func preload_file(_actor: String, args: Array[String]) -> void:
+	var file_path := args[0]
+	var file := FileAccess.open(file_path, FileAccess.READ)
+	var bytes := file.get_buffer(file.get_length())
+	preloaded_files[file_path] = bytes
