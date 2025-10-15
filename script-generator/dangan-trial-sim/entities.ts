@@ -29,7 +29,7 @@ class System<Tags extends string = never> {
 		);
 		return this;
 	}
-	stopTracks() {
+	stopAllTracks() {
 		log("system: stop_tracks");
 		return this;
 	}
