@@ -1,6 +1,10 @@
-import { actor, camera, system } from "dangan-trial-maker";
+import { actor, camera, System } from "dangan-trial-maker";
 import { bold, narrate, think } from "dangan-trial-maker/bb";
 
+const system = new System().preload({
+	path: "user://underground.mp3",
+	tag: "underground_theme",
+});
 system.debug();
 const narrator = actor("narrator");
 system.assign("hina", 1);
@@ -17,7 +21,7 @@ system.assign("chihiro", 13);
 system.assign("byakuya", 14);
 system.assign("yasuhiro", 15);
 
-system.play("user://underground.mp3");
+system.play("underground_theme");
 narrator.say(
 	"You'll have to rely on your own ",
 	bold("logic"),
@@ -25,7 +29,7 @@ narrator.say(
 	bold("lies or contradictions"),
 	".",
 );
-system.play("user://underground.mp3");
+system.play("underground_theme");
 narrator.say("hello????????????????");
-system.play("user://underground.mp3");
+system.play("underground_theme");
 narrator.say("you hear me my guy?");
