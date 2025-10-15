@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsx"
+    "build": "tsx dangan-trial-sim/compiler.ts --input my_script.ts --output output.trial"
   },
   "keywords": [],
   "author": "",

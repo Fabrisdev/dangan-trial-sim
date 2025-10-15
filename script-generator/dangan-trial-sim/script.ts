@@ -7,5 +7,5 @@ export function log(line: string) {
 }
 
 process.on("exit", () => {
-	writeFileSync("output.trial", output.join("\n"), "utf-8");
+	writeFileSync(globalThis.outputFile, output.join("\n"), "utf-8");
 });

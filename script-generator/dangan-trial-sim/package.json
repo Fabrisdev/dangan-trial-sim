@@ -17,9 +17,11 @@
   "dependencies": {
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.4",
-    "@babel/preset-typescript": "^7.27.1"
+    "@babel/preset-typescript": "^7.27.1",
+    "args": "^5.0.3"
   },
   "devDependencies": {
+    "@types/args": "^5.0.4",
     "@types/babel__core": "^7.20.5",
     "@types/babel-types": "^7.0.16"
   }
