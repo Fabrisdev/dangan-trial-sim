@@ -79,3 +79,7 @@ export type HinaExpressions =
 	| "firedup"
 	| "meh"
 	| "hothuh";
+
+declare global {
+	var outputFile: string;
+}

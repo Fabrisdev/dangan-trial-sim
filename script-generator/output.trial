@@ -41,6 +41,3 @@ camera: focus_on makoto
 camera: set_narrator_view false
 system: stop_tracks
 makoto: say [color=white]Hola de nuevo[/color]
-system: ifanswer 5
-system: wait 2s
-system: endif
