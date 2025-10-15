@@ -17,7 +17,7 @@ export class Actor {
 
 class Makoto extends Actor {
 	/**
-	 * ![Makoto's expressions](expressions/makoto.png)
+	 * ![Makoto's expressions](https://github.com/Fabrisdev/dangan-trial-sim/blob/main/script-generator/dangan-trial-sim/expressions/makoto.png?raw=true)
 	 */
 	expression(exp: MakotoExpressions) {
 		super.expression(exp);
@@ -32,7 +32,7 @@ class Makoto extends Actor {
 
 class Hina extends Actor {
 	/**
-	 * ![Hina's expressions](expressions/Hina.png)
+	 * ![Hina's expressions](https://github.com/Fabrisdev/dangan-trial-sim/blob/main/script-generator/dangan-trial-sim/expressions/Hina.png?raw=true)
 	 */
 	expression(exp: HinaExpressions) {
 		super.expression(exp);

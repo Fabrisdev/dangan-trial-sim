@@ -29,6 +29,10 @@ class System<Tags extends string = never> {
 		);
 		return this;
 	}
+	stopTracks() {
+		log("system: stop_tracks");
+		return this;
+	}
 
 	/**
 	 * Preloads any file into the game.
@@ -48,9 +52,19 @@ class Camera {
 		log(`camera: focus_on ${actor.constructor.name.toLowerCase()}`);
 		return this;
 	}
-	setNarratorView() {
-		log("camera: set_narrator_view");
+	setNarratorView(bool: boolean) {
+		log(`camera: set_narrator_view ${bool ? "true" : "false"}`);
 		return this;
+	}
+	/**
+	 * Helper function for more easily swapping between normal and narrator view.
+	 * @param f Callback function with all the things to do while on narrator view. Must return an actor you wish to focus the camera on afterwards.
+	 */
+	narratorView(f: () => Actor) {
+		this.setNarratorView(true);
+		const actor = f();
+		camera.focusOn(actor);
+		this.setNarratorView(false);
 	}
 }
 
