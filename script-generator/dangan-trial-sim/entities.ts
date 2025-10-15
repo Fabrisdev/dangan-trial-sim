@@ -2,7 +2,7 @@ import type { Actor } from "./actors";
 import { log } from "./script";
 import type { CharacterName, SeatId } from "./types";
 
-export class System<Tags extends string = never> {
+class System<Tags extends string = never> {
 	preloadedFiles: Record<string, string> = {};
 
 	assign(actor: Actor | CharacterName, seat: SeatId) {

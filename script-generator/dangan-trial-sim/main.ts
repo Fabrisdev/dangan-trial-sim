@@ -1,2 +1,2 @@
 export { actor } from "./actors";
-export { camera, System, system } from "./entities";
+export { camera, system } from "./entities";

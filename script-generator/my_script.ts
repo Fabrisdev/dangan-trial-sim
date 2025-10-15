@@ -1,7 +1,7 @@
-import { actor, camera, System } from "dangan-trial-maker";
+import { system as _system, actor, camera } from "dangan-trial-maker";
 import { bold, narrate, think } from "dangan-trial-maker/bb";
 
-const system = new System().preload({
+const system = _system.preload({
 	path: "user://underground.mp3",
 	tag: "underground_theme",
 });
