@@ -48,6 +48,10 @@ class Camera {
 		log(`camera: focus_on ${actor.constructor.name.toLowerCase()}`);
 		return this;
 	}
+	setNarratorView() {
+		log("camera: set_narrator_view");
+		return this;
+	}
 }
 
 export const camera = new Camera();
