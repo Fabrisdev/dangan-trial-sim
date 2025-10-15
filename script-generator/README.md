@@ -23,6 +23,34 @@ import { system, actor } from 'dangan-trial-sim'
 const makoto = actor('makoto') // Get makoto instance
 system.assign(makoto, 0) //Sit him in the first seat
 ```
+
+## Questions (if)
+There's two ways to ask a question in-game. You can either do this
+```ts
+import { actor, system } from 'dangan-trial-sim'
+const narrator = actor('narrator')
+narrator.say('What do you think? Will you do it?')
+const answer = system.ask(['Yes', 'No'])
+system.if(answer, "Yes", () => {
+  narrator.say('Thank you!')
+})
+system.if(answer, "No", () => {
+  narrator.say('Ow, really?')
+})
+```
+Or... you can just directly use Javascript's IF statement!
+```ts
+import { actor, system } from 'dangan-trial-sim'
+const narrator = actor('narrator')
+narrator.say('What do you think? Will you do it?')
+const answer = system.ask(['Yes', 'No'])
+if(answer === 'Yes'){
+  narrator.say('Thank you!')
+}else{
+  narrator.say('Ow, really?')
+}
+```
+
 ## Code example
 ```ts
 import { actor, camera } from 'dangan-trial-sim'
@@ -37,9 +65,21 @@ For more examples please see the included `my_script.ts` file.
 ## Build file
 After writing your script you can build it by running
 ```bash
-npm run build file_name.ts
+npx tsx dangan-trial-sim/compiler.ts --input SCRIPT_FILE_NAME.ts --output OUTPUT_FILE_NAME
 ```
+For example, if you have a `my_script.ts` you can compile it with
+```bash
+npx tsx dangan-trial-sim/compiler.ts --input my_script.ts --output my_trial.trial
+```
+(Note that the .trial extension is not obligatory).
+
 This will generate an `output.trial` file inside your `CWD` which you can then set as the script file inside Godot.
+
+Alternatively, if your script file is `my_script.ts` you can just run it with the shortcut
+```bash
+npm run build
+```
+which is just an alias for the previous mentioned command.
 
 # Extra
 Here's some extra stuff you might find useful.
