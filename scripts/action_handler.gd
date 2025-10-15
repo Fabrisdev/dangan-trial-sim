@@ -88,3 +88,7 @@ func preload_file(_actor: String, args: Array[String]) -> void:
 
 func stop_tracks(_actor: String, _args: Array[String]) -> void:
 	$"../AudioStreamPlayer".stop()
+
+func set_mouse_color(_actor: String, args: Array[String]) -> void:
+	var color := args[0]
+	$"../UI/MouseButton".set_mouse_color(color)

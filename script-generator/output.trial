@@ -14,15 +14,29 @@ system: assign yasuhiro:15
 system: assign makoto:8
 camera: focus_on makoto
 makoto: expression hm
+system: set_mouse_color blue
 makoto: say [color=#49aec5]Kyoko said it was a "bewildering act"...[/color]
+system: set_mouse_color yellow
+system: set_mouse_color blue
 makoto: say [color=#49aec5]I almost didn't notice it at first, but...is that the key point here?[/color]
+system: set_mouse_color yellow
 camera: set_narrator_view true
 system: play user://underground.mp3 loop
+system: set_mouse_color green
 narrator: say [color=green]There's a [color=yellow]bit more to learn[/color] about Nonstop Debates. Would you like to hear more?[/color]
+system: set_mouse_color yellow
+system: set_mouse_color green
 narrator: say [color=green]From here on out, the number of weak spots will start going up.[/color]
+system: set_mouse_color yellow
+system: set_mouse_color green
 narrator: say [color=green]But no matter how many weak spots, there's essentially only one [color=yellow]lie or contradiction[/color] in that debate.[/color]
+system: set_mouse_color yellow
+system: set_mouse_color green
 narrator: say [color=green]What I'm trying to say is, not all weak spots you see are necessarily false.[/color]
+system: set_mouse_color yellow
+system: set_mouse_color green
 narrator: say [color=green]You'll have to rely on your own [color=yellow]logic[/color] to determine which weak spots are actually [color=yellow]lies or contradictions[/color].[/color]
+system: set_mouse_color yellow
 camera: focus_on makoto
 camera: set_narrator_view false
 system: stop_tracks

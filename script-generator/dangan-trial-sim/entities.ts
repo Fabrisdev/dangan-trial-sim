@@ -33,6 +33,10 @@ class System<Tags extends string = never> {
 		log("system: stop_tracks");
 		return this;
 	}
+	setMouseColor(color: "yellow" | "green" | "blue") {
+		log(`system: set_mouse_color ${color}`);
+		return this;
+	}
 
 	/**
 	 * Preloads any file into the game.

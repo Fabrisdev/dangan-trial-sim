@@ -25,7 +25,9 @@ class Makoto extends Actor {
 	}
 
 	think(...text: string[]) {
+		system.setMouseColor("blue");
 		log(`${this.constructor.name.toLowerCase()}: say ${think(text.join(""))}`);
+		system.setMouseColor("yellow");
 		return this;
 	}
 }
@@ -52,7 +54,9 @@ class Hifumi extends Actor {
 
 class Narrator {
 	say(...text: string[]) {
+		system.setMouseColor("green");
 		log(`narrator: say ${narrate(text.join(""))}`);
+		system.setMouseColor("yellow");
 		return this;
 	}
 }
