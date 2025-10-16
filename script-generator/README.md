@@ -36,8 +36,7 @@ const answer = system.ask(['Yes', 'No'])
 
 system.if(answer, "Yes", () => {
   narrator.say('Thank you!')
-})
-system.if(answer, "No", () => {
+}).else(() => {
   narrator.say('Ow, really?')
 })
 ```
@@ -56,6 +55,13 @@ if(answer === 'Yes'){
   narrator.say('Ow, really?')
 }
 ```
+Please note that if you're using the IF statement version, the left side of the if statement has to be like this for the transpiler to be able to understand it
+```ts
+answer === "Yes" // ✅
+answer !== "No" // ❌ won't transpile, compiler only searches for '==='
+"Yes" === answer // ❌ won't transpile, compiler needs value to check to be on the right
+```
+This will be fixed in the future as the compiler advances. In the mean time, if you're using the callback version you don't need to worry about any of this.
 
 ## Code example
 ```ts
