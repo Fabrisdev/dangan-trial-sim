@@ -1,5 +1,5 @@
 import type { Actor } from "./actors";
-import { log } from "./script";
+import { log, pop } from "./script";
 import type { CharacterName, SeatId } from "./types";
 
 class System<Tags extends string = never> {
@@ -48,6 +48,16 @@ class System<Tags extends string = never> {
 		log(`system: ifanswer ${value}`);
 		f();
 		log(`system: endif`);
+
+		return {
+			else: (y: () => void) => {
+				pop();
+				log(`system: else`);
+				y();
+				log(`system: endif`);
+				return this;
+			},
+		};
 	}
 
 	/**
