@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8ijkimbdxdmj"]
+[gd_scene load_steps=42 format=3 uid="uid://c8ijkimbdxdmj"]
 
 [ext_resource type="Script" uid="uid://dx63g61f43xax" path="res://scripts/ui_manager.gd" id="1_gdt2y"]
 [ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="2_wm3ai"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://dq2i8fjiam0qn" path="res://fonts/SourceSans3-VariableFont_wght.ttf" id="4_p7vwb"]
 [ext_resource type="Texture2D" uid="uid://cltiix4f6cooy" path="res://sprites/class_trial/buttons.png" id="5_wm3ai"]
 [ext_resource type="Script" uid="uid://db5gkb5rhukwn" path="res://scripts/mouse_button.gd" id="6_8dubc"]
+[ext_resource type="Script" uid="uid://bemfa7eeohdau" path="res://scenes/choice_boxes.gd" id="7_ktti3"]
+[ext_resource type="Texture2D" uid="uid://deqjo5tpcawsr" path="res://sprites/class_trial/choice_boxes.png" id="7_p7vwb"]
+[ext_resource type="AudioStream" uid="uid://dsn7q63rmxubh" path="res://sounds/hover.mp3" id="9_7dvkv"]
+[ext_resource type="AudioStream" uid="uid://ctl55r2imelf2" path="res://sounds/select.mp3" id="10_vdcm2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kkkcx"]
 atlas = ExtResource("2_wm3ai")
@@ -121,6 +125,47 @@ variation_transform = Transform2D(1, 0, 0, 0.7, 0, 0)
 atlas = ExtResource("5_wm3ai")
 region = Rect2(230, 378, 100, 100)
 filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktti3"]
+atlas = ExtResource("7_p7vwb")
+region = Rect2(819, 6, 793, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgfq5"]
+atlas = SubResource("AtlasTexture_ktti3")
+
+[sub_resource type="FontVariation" id="FontVariation_p7vwb"]
+base_font = ExtResource("4_p7vwb")
+variation_embolden = 1.5
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ktti3"]
+load_path = "res://.godot/imported/choice_boxes.png-0a0a3cca715e42ef22dd4dca495a4783.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dvkv"]
+atlas = SubResource("CompressedTexture2D_ktti3")
+region = Rect2(819, 6, 793, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdcm2"]
+atlas = SubResource("AtlasTexture_7dvkv")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rmj2"]
+load_path = "res://.godot/imported/choice_boxes.png-0a0a3cca715e42ef22dd4dca495a4783.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsj0x"]
+atlas = SubResource("CompressedTexture2D_6rmj2")
+region = Rect2(819, 6, 793, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsv74"]
+atlas = SubResource("AtlasTexture_vsj0x")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1mc3"]
+load_path = "res://.godot/imported/choice_boxes.png-0a0a3cca715e42ef22dd4dca495a4783.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cof4p"]
+atlas = SubResource("CompressedTexture2D_h1mc3")
+region = Rect2(819, 6, 793, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7tlh"]
+atlas = SubResource("AtlasTexture_cof4p")
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_gdt2y")
@@ -280,3 +325,86 @@ offset_right = 1181.0
 offset_bottom = 673.0
 texture = SubResource("AtlasTexture_8dubc")
 script = ExtResource("6_8dubc")
+
+[node name="ChoiceBoxes" type="Node2D" parent="."]
+position = Vector2(1280, 82)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("7_ktti3")
+
+[node name="Option1" type="TextureRect" parent="ChoiceBoxes"]
+offset_left = -683.0
+offset_top = 107.5
+offset_right = 110.0
+offset_bottom = 169.50002
+texture = SubResource("AtlasTexture_cgfq5")
+
+[node name="Text" type="RichTextLabel" parent="ChoiceBoxes/Option1"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 8.333
+offset_right = 739.1666
+offset_bottom = 53.333
+theme_override_fonts/normal_font = SubResource("FontVariation_p7vwb")
+theme_override_font_sizes/normal_font_size = 30
+text = "Option 1"
+vertical_alignment = 1
+
+[node name="Option2" type="TextureRect" parent="ChoiceBoxes"]
+offset_left = -683.3334
+offset_top = 157.4999
+offset_right = 109.666626
+offset_bottom = 219.4999
+texture = SubResource("AtlasTexture_vdcm2")
+
+[node name="Text" type="RichTextLabel" parent="ChoiceBoxes/Option2"]
+layout_mode = 0
+offset_left = 99.99988
+offset_top = 8.333432
+offset_right = 739.1665
+offset_bottom = 53.33343
+theme_override_fonts/normal_font = SubResource("FontVariation_p7vwb")
+theme_override_font_sizes/normal_font_size = 30
+text = "Option 2"
+vertical_alignment = 1
+
+[node name="Option3" type="TextureRect" parent="ChoiceBoxes"]
+offset_left = -683.3334
+offset_top = 207.49994
+offset_right = 109.666626
+offset_bottom = 269.5
+texture = SubResource("AtlasTexture_qsv74")
+
+[node name="Text" type="RichTextLabel" parent="ChoiceBoxes/Option3"]
+layout_mode = 0
+offset_left = 99.99985
+offset_top = 8.3333435
+offset_right = 739.1665
+offset_bottom = 53.333344
+theme_override_fonts/normal_font = SubResource("FontVariation_p7vwb")
+theme_override_font_sizes/normal_font_size = 30
+text = "Option 3"
+vertical_alignment = 1
+
+[node name="Option4" type="TextureRect" parent="ChoiceBoxes"]
+offset_left = -683.3334
+offset_top = 256.66656
+offset_right = 109.666626
+offset_bottom = 318.6666
+texture = SubResource("AtlasTexture_f7tlh")
+
+[node name="Text" type="RichTextLabel" parent="ChoiceBoxes/Option4"]
+layout_mode = 0
+offset_left = 99.99985
+offset_top = 9.166718
+offset_right = 739.1665
+offset_bottom = 54.166718
+theme_override_fonts/normal_font = SubResource("FontVariation_p7vwb")
+theme_override_font_sizes/normal_font_size = 30
+text = "Option 4"
+vertical_alignment = 1
+
+[node name="HoverEffectPlayer" type="AudioStreamPlayer" parent="ChoiceBoxes"]
+stream = ExtResource("9_7dvkv")
+
+[node name="SelectEffectPlayer" type="AudioStreamPlayer" parent="ChoiceBoxes"]
+stream = ExtResource("10_vdcm2")

@@ -13,16 +13,10 @@ system: assign byakuya:14
 system: assign yasuhiro:15
 system: assign makoto:8
 camera: focus_on makoto
-system: set_mouse_color green
-narrator: say [color=green]What do you think? Will you do it?[/color]
-system: set_mouse_color yellow
+makoto: say [color=white]What do you think? Will you do it?[/color]
 system: ask Yes No
 system: ifanswer Yes
-system: set_mouse_color green
-narrator: say [color=green]Thank you![/color]
-system: set_mouse_color yellow
+makoto: say [color=white]Thank you![/color]
 system: else
-system: set_mouse_color green
-narrator: say [color=green]Ow, really?[/color]
-system: set_mouse_color yellow
+makoto: say [color=white]Ow, really?[/color]
 system: endif
