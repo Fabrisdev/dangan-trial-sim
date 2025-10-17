@@ -14,7 +14,7 @@ system: assign yasuhiro:15
 system: assign makoto:8
 camera: focus_on makoto
 makoto: say [color=white]What do you think? Will you do it?[/color]
-system: ask Yes No
+system: choose Yes No
 system: ifanswer Yes
 makoto: say [color=white]Thank you![/color]
 system: else

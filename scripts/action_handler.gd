@@ -93,6 +93,6 @@ func set_mouse_color(_actor: String, args: Array[String]) -> void:
 	var color := args[0]
 	$"../UI/MouseButton".set_mouse_color(color)
 	
-func ask(_actor: String, args: Array[String]) -> void:
+func choose(_actor: String, args: Array[String]) -> void:
 	get_parent().set_asleep(-1)
-	$"../UI".ask(args)
+	$"../UI".choose(args)

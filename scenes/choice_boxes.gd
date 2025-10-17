@@ -2,19 +2,47 @@ extends Node2D
 
 var selected: int = -1
 var selected_node: TextureRect
+var amount_of_choices = 4
+	
+func _ready() -> void:
+	hide_all()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("up"):
 		selected -= 1
-		if selected < 1: selected = 4
+		if selected < 1: selected = amount_of_choices
 		hover_option()
 	if Input.is_action_just_pressed("down"):
 		selected += 1
-		if selected > 4 or selected == 0: selected = 1
+		if selected > amount_of_choices or selected == 0: selected = 1
 		hover_option()
 	if Input.is_action_just_pressed("confirm"):
 		select_option()
+		hide_all()
+	
+func choose(replies: Array[String]) -> void:
+	amount_of_choices = replies.size()
+	for reply in replies:
+		show_choice(reply)
 		
+func show_choice(reply: String) -> void:
+	for choice_id in range(1, 4+1):
+		var choice_node = get_node("Option" + str(choice_id))
+		var is_available = choice_node.visible == false
+		if is_available:
+			_show(reply, choice_node)
+			return
+			
+func _show(reply: String, choice_node: Node) -> void:
+	choice_node.visible = true
+	choice_node.get_child(0).text = reply
+
+func hide_all():
+	$Option1.visible = false
+	$Option2.visible = false
+	$Option3.visible = false
+	$Option4.visible = false
+	
 func select_option():
 	$SelectEffectPlayer.play()
 	print('Option chosen: ', selected)

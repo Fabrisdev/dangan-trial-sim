@@ -82,6 +82,5 @@ func show_face_ui(show_face: bool) -> void:
 	for node in ui_nodes:
 		node.visible = show_face
 
-func ask(questions: Array[String]) -> void:
-	
-	pass
+func choose(replies: Array[String]) -> void:
+	$ChoiceBoxes.choose(replies)

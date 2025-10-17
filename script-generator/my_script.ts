@@ -23,7 +23,7 @@ const makoto = actor("makoto", 8);
 camera.focusOn(makoto);
 makoto.say("What do you think? Will you do it?");
 
-const answer = system.ask(["Yes", "No"]);
+const answer = system.choose(["Yes", "No"]);
 
 if (answer === "Yes") {
 	makoto.say("Thank you!");

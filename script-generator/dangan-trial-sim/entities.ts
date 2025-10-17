@@ -37,11 +37,11 @@ class System<Tags extends string = never> {
 		log(`system: set_mouse_color ${color}`);
 		return this;
 	}
-	ask<Option extends string>(options: Option[]): Option {
+	choose<Option extends string>(options: Option[]): Option {
 		const optionsWithoutSpaces = options.map((option) =>
 			option.replaceAll(" ", "_"),
 		);
-		log(`system: ask ${optionsWithoutSpaces.join(" ")}`);
+		log(`system: choose ${optionsWithoutSpaces.join(" ")}`);
 		return options[0];
 	}
 	if(_: string, value: string, f: () => void) {
