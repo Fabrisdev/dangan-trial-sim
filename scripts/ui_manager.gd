@@ -42,9 +42,7 @@ func show_text(actor: String, text: String) -> void:
 	$MouseButton.visible = true
 	
 func show_face(actor: String) -> void:
-	if actor == 'narrator':
-		show_face_ui(false)
-		return
+	if actor == 'narrator': return
 	show_face_ui(true)
 	var actor_to_face_id := {
 		"makoto": 0,
@@ -84,3 +82,6 @@ func show_face_ui(show_face: bool) -> void:
 
 func choose(replies: Array[String]) -> void:
 	$ChoiceBoxes.choose(replies)
+	
+func set_mouse_visible(is_visible: bool) -> void:
+	$MouseButton.set_mouse_visible(is_visible)

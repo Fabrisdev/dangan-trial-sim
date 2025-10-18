@@ -3,11 +3,14 @@ extends Node2D
 var selected: int = -1
 var selected_node: TextureRect
 var amount_of_choices = 4
+var is_currently_choosing = false
 	
 func _ready() -> void:
 	hide_all()
 
 func _process(_delta: float) -> void:
+	if is_currently_choosing:
+		get_parent().get_parent().set_can_skip(false)
 	if Input.is_action_just_pressed("up"):
 		selected -= 1
 		if selected < 1: selected = amount_of_choices
@@ -21,6 +24,8 @@ func _process(_delta: float) -> void:
 		hide_all()
 	
 func choose(replies: Array[String]) -> void:
+	is_currently_choosing = true
+	hide_all()
 	amount_of_choices = replies.size()
 	for reply in replies:
 		show_choice(reply)
@@ -45,6 +50,7 @@ func hide_all():
 	
 func select_option():
 	$SelectEffectPlayer.play()
+	is_currently_choosing = false
 	print('Option chosen: ', selected)
 
 func hover_option():

@@ -29,9 +29,11 @@ func expression(actor: String, args: Array[String]) -> void:
 	$"../CharacterManager".set_expression(actor, pose)
 
 func say(actor: String, args: Array[String]) -> void:
-	var text := " ".join(args)
+	var should_await = args[0] == 'await=true'
+	var text := " ".join(args.slice(1))
 	$"../UI".show_text(actor, text)
-	get_parent().set_asleep(-1)
+	if should_await:
+		get_parent().set_asleep(-1)
 
 func assign(_actor: String, args: Array[String]) -> void:
 	var seats = args.map(func(arg: String):
@@ -95,4 +97,17 @@ func set_mouse_color(_actor: String, args: Array[String]) -> void:
 	
 func choose(_actor: String, args: Array[String]) -> void:
 	get_parent().set_asleep(-1)
-	$"../UI".choose(args)
+	get_parent().set_can_skip(-1)
+	var choices: Array[String] = []
+	for choice in args:
+		choice = choice.replace('_', ' ')
+		choices.push_back(choice)
+	$"../UI".choose(choices)
+	
+func show_ui(_actor: String, args: Array[String]) -> void:
+	var should_show = args[0] == 'true'
+	$"../UI".show_face_ui(should_show)
+
+func set_mouse_visible(_actor: String, args: Array[String]) -> void:
+	var is_visible = args[0] == 'true'
+	$"../UI".set_mouse_visible(is_visible)
