@@ -111,6 +111,6 @@ func ifanswer(_actor: String, args: Array[String]) -> void:
 	var value := " ".join(args)
 	var choice_made = $"../UI".choice_made
 	if value == choice_made:
-		get_parent().run_till_else()
+		get_parent().set_run_from_and_till("ifanswer -> else")
 	else:
-		get_parent().run_from_else()
+		get_parent().set_run_from_and_till("else -> endif")

@@ -6,6 +6,8 @@ var trial_file: String
 var actions_node: Node = preload("uid://b7m08ec1cjdya").new()
 var is_sleeping := false
 var can_skip := true
+var run_from_and_till = "forever -> forever"
+var currently_inside = "nothing"
 
 func _ready() -> void:
 	add_child(actions_node)
@@ -25,7 +27,29 @@ func execute_line(line: String) -> void:
 	var actor_and_action := extract_actor_and_action(line)
 	var actor = actor_and_action.actor
 	var action = actor_and_action.action
-	execute_action(actor, action)
+	if action.name == "endif":
+		run_from_and_till = "forever -> forever"
+		currently_inside = "nothing"
+		return
+		
+	if action.name == "else":
+		currently_inside = "else"
+		return
+	
+	if action.name == "ifanswer":
+		currently_inside = "ifanswer"
+		execute_action(actor, action)
+		return
+	
+	
+	if run_from_and_till == "ifanswer -> else" and currently_inside == "ifanswer":
+		execute_action(actor, action)
+		return
+	if run_from_and_till == "else -> endif" and currently_inside == "else":
+		execute_action(actor, action)
+		return
+	if currently_inside == "nothing":
+		execute_action(actor, action)
 
 func execute_action(actor: String, action: Dictionary) -> void:
 	var actions := {}
@@ -77,8 +101,5 @@ func _process(_delta: float) -> void:
 func set_can_skip(_can_skip: bool) -> void:
 	can_skip = _can_skip
 
-func run_till_else():
-	pass
-	
-func run_from_else():
-	pass
+func set_run_from_and_till(_run_f_t: String) -> void:
+	run_from_and_till = _run_f_t

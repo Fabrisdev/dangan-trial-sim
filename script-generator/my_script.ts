@@ -35,10 +35,15 @@ camera.narratorView(() => {
 	);
 	system.wait(0.2);
 	const answer = system.choose(["Not at all!", "Absolutely!"]);
-	if (answer === "Not at all!") {
+	if (answer === "Absolutely!") {
 		narrator.say("Thank you!");
+		narrator.say("Thank you for choosing yes!");
+		narrator.say("You're my guy bro!");
 	} else {
 		narrator.say("Ow, really?");
+		narrator.say("Grrr");
+		narrator.say("I hate you");
 	}
+	narrator.say("This is after the if");
 	return makoto;
 });

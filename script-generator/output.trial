@@ -24,12 +24,22 @@ system: set_mouse_color green
 narrator: say await=false [color=green]There's[color=yellow] a bit more to learn [/color]about Nonstop Debates. Would you like to hear more?[/color]
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
-system: ifanswer Not at all!
+system: ifanswer Absolutely!
 system: set_mouse_color green
 narrator: say await=true [color=green]Thank you![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Thank you for choosing yes![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]You're my guy bro![/color]
 system: else
 system: set_mouse_color green
 narrator: say await=true [color=green]Ow, really?[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Grrr[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]I hate you[/color]
 system: endif
+system: set_mouse_color green
+narrator: say await=true [color=green]This is after the if[/color]
 camera: focus_on makoto
 camera: set_narrator_view false
