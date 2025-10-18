@@ -408,3 +408,5 @@ stream = ExtResource("9_7dvkv")
 
 [node name="SelectEffectPlayer" type="AudioStreamPlayer" parent="ChoiceBoxes"]
 stream = ExtResource("10_vdcm2")
+
+[connection signal="choice_made" from="ChoiceBoxes" to="." method="_on_choice_boxes_choice_made"]

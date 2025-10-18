@@ -1,5 +1,6 @@
 extends Node2D
 
+signal choice_made(choice: String)
 var selected: int = -1
 var selected_node: TextureRect
 var amount_of_choices = 4
@@ -62,7 +63,9 @@ func select_option():
 	await get_tree().create_timer(0.05).timeout
 	selected_node.visible = true
 	is_currently_choosing = false
-	print('Option chosen: ', selected)
+	var choice_selected = selected_node.get_child(0).text
+	print('Option chosen: ', choice_selected)
+	choice_made.emit(choice_selected)
 	hide_all()
 
 func hover_option():

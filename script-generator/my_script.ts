@@ -35,7 +35,7 @@ camera.narratorView(() => {
 	);
 	system.wait(0.2);
 	const answer = system.choose(["Not at all!", "Absolutely!"]);
-	if (answer === "Absolutely!") {
+	if (answer === "Not at all!") {
 		narrator.say("Thank you!");
 	} else {
 		narrator.say("Ow, really?");

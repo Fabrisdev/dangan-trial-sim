@@ -97,7 +97,6 @@ func set_mouse_color(_actor: String, args: Array[String]) -> void:
 	
 func choose(_actor: String, args: Array[String]) -> void:
 	get_parent().set_asleep(-1)
-	get_parent().set_can_skip(-1)
 	var choices: Array[String] = []
 	for choice in args:
 		choice = choice.replace('_', ' ')
@@ -107,3 +106,10 @@ func choose(_actor: String, args: Array[String]) -> void:
 func show_ui(_actor: String, args: Array[String]) -> void:
 	var should_show = args[0] == 'true'
 	$"../UI".show_face_ui(should_show)
+
+func ifanswer(_actor: String, args: Array[String]) -> void:
+	var value := args[0]
+	print('value: ', value)
+	print('choice_made: ', $"../UI".choice_made)
+	get_parent().set_asleep(-1)
+	get_parent().set_can_skip(false)

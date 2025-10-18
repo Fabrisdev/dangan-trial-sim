@@ -1,4 +1,5 @@
 extends CanvasLayer
+var choice_made = ""
 
 @export var text_speed = 0.015
 const actors_to_names := {
@@ -82,3 +83,8 @@ func show_face_ui(show_face: bool) -> void:
 
 func choose(replies: Array[String]) -> void:
 	$ChoiceBoxes.choose(replies)
+
+
+func _on_choice_boxes_choice_made(choice: String) -> void:
+	choice_made = choice
+	get_parent().set_asleep(0)
