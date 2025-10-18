@@ -24,7 +24,7 @@ system: set_mouse_color green
 narrator: say await=false [color=green]There's[color=yellow] a bit more to learn [/color]about Nonstop Debates. Would you like to hear more?[/color]
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
-system: ifanswer Absolutely!
+system: ifanswer Not at all!
 system: set_mouse_color green
 narrator: say await=true [color=green]Thank you![/color]
 system: else

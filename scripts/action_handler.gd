@@ -108,8 +108,9 @@ func show_ui(_actor: String, args: Array[String]) -> void:
 	$"../UI".show_face_ui(should_show)
 
 func ifanswer(_actor: String, args: Array[String]) -> void:
-	var value := args[0]
-	print('value: ', value)
-	print('choice_made: ', $"../UI".choice_made)
-	get_parent().set_asleep(-1)
-	get_parent().set_can_skip(false)
+	var value := " ".join(args)
+	var choice_made = $"../UI".choice_made
+	if value == choice_made:
+		get_parent().run_till_else()
+	else:
+		get_parent().run_from_else()

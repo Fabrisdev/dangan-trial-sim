@@ -76,3 +76,9 @@ func _process(_delta: float) -> void:
 
 func set_can_skip(_can_skip: bool) -> void:
 	can_skip = _can_skip
+
+func run_till_else():
+	pass
+	
+func run_from_else():
+	pass
