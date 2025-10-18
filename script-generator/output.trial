@@ -13,13 +13,22 @@ system: assign byakuya:14
 system: assign yasuhiro:15
 system: assign makoto:8
 camera: focus_on makoto
-system: set_mouse_color green
-narrator: say await=false [color=green]What do you think? Will you do it?[/color]
+system: set_mouse_color blue
+makoto: say await=true [color=#49aec5]Kyoko said it was a "bewildering act"...[/color]
 system: set_mouse_color yellow
-system: wait 2s
-system: choose Yes No
-system: ifanswer Yes
+system: set_mouse_color blue
+makoto: say await=true [color=#49aec5]I almost didn't notice it at first, but... is that the key point here?[/color]
+system: set_mouse_color yellow
+camera: set_narrator_view true
+system: set_mouse_color green
+narrator: say await=true [color=green]There's[color=yellow] a bit more to learn [/color]about Nonstop Debates. Would you like to hear more?[/color]
+system: set_mouse_color yellow
+system: wait 0.2s
+system: choose Not_at_all! Absolutely!
+system: ifanswer Absolutely!
 makoto: say await=true [color=white]Thank you![/color]
 system: else
 makoto: say await=true [color=white]Ow, really?[/color]
 system: endif
+camera: focus_on makoto
+camera: set_narrator_view false

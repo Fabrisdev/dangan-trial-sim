@@ -71,6 +71,11 @@ class System<Tags extends string = never> {
 		this.preloadedFiles[tag] = path;
 		return this as System<Tags | Tag>;
 	}
+
+	showUi(bool: boolean) {
+		log(`system: show_ui ${bool}`);
+		return this;
+	}
 }
 
 class Camera {

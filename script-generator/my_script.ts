@@ -1,4 +1,5 @@
 import { system as _system, actor, camera } from "dangan-trial-maker";
+import { bold } from "dangan-trial-maker/bb";
 
 const system = _system.preload({
 	path: "user://underground.mp3",
@@ -21,12 +22,23 @@ system.assign("yasuhiro", 15);
 const makoto = actor("makoto", 8);
 
 camera.focusOn(makoto);
-narrator.say("What do you think? Will you do it?", { await: false });
-system.wait(2);
-const answer = system.choose(["Yes", "No"]);
-
-if (answer === "Yes") {
-	makoto.say("Thank you!");
-} else {
-	makoto.say("Ow, really?");
-}
+makoto.think('Kyoko said it was a "bewildering act"...');
+makoto.think(
+	"I almost didn't notice it at first, but... is that the key point here?",
+);
+camera.narratorView(() => {
+	narrator.say(
+		"There's" +
+			bold(" a bit more to learn ") +
+			"about Nonstop Debates. Would you like to hear more?",
+		{ await: false },
+	);
+	system.wait(0.2);
+	const answer = system.choose(["Not at all!", "Absolutely!"]);
+	if (answer === "Absolutely!") {
+		makoto.say("Thank you!");
+	} else {
+		makoto.say("Ow, really?");
+	}
+	return makoto;
+});

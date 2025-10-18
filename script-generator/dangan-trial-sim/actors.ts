@@ -72,7 +72,6 @@ class Narrator {
 				? "await=true"
 				: "await=false";
 		log(`narrator: say ${shouldAwait} ${narrate(text)}`);
-		system.setMouseColor("yellow");
 		return this;
 	}
 }
