@@ -107,7 +107,3 @@ func choose(_actor: String, args: Array[String]) -> void:
 func show_ui(_actor: String, args: Array[String]) -> void:
 	var should_show = args[0] == 'true'
 	$"../UI".show_face_ui(should_show)
-
-func set_mouse_visible(_actor: String, args: Array[String]) -> void:
-	var is_visible = args[0] == 'true'
-	$"../UI".set_mouse_visible(is_visible)

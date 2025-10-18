@@ -82,6 +82,3 @@ func show_face_ui(show_face: bool) -> void:
 
 func choose(replies: Array[String]) -> void:
 	$ChoiceBoxes.choose(replies)
-	
-func set_mouse_visible(is_visible: bool) -> void:
-	$MouseButton.set_mouse_visible(is_visible)

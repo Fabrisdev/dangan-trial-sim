@@ -22,7 +22,6 @@ system: set_mouse_color yellow
 camera: set_narrator_view true
 system: set_mouse_color green
 narrator: say await=false [color=green]There's[color=yellow] a bit more to learn [/color]about Nonstop Debates. Would you like to hear more?[/color]
-system: set_mouse_visible false
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
 system: ifanswer Absolutely!

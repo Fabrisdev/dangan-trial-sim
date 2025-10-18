@@ -33,7 +33,6 @@ camera.narratorView(() => {
 			"about Nonstop Debates. Would you like to hear more?",
 		{ await: false },
 	);
-	system.setMouseVisible(false);
 	system.wait(0.2);
 	const answer = system.choose(["Not at all!", "Absolutely!"]);
 	if (answer === "Absolutely!") {

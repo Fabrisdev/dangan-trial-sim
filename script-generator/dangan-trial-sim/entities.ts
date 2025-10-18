@@ -76,11 +76,6 @@ class System<Tags extends string = never> {
 		log(`system: show_ui ${bool}`);
 		return this;
 	}
-
-	setMouseVisible(bool: boolean) {
-		log(`system: set_mouse_visible ${bool}`);
-		return this;
-	}
 }
 
 class Camera {
