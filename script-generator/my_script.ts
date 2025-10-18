@@ -36,9 +36,9 @@ camera.narratorView(() => {
 	system.wait(0.2);
 	const answer = system.choose(["Not at all!", "Absolutely!"]);
 	if (answer === "Absolutely!") {
-		makoto.say("Thank you!");
+		narrator.say("Thank you!");
 	} else {
-		makoto.say("Ow, really?");
+		narrator.say("Ow, really?");
 	}
 	return makoto;
 });

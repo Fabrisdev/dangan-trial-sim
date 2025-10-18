@@ -4,6 +4,8 @@ var selected: int = -1
 var selected_node: TextureRect
 var amount_of_choices = 4
 var is_currently_choosing = false
+@export var default_position = -650
+@export var unselected_position = -683
 	
 func _ready() -> void:
 	hide_all()
@@ -19,9 +21,8 @@ func _process(_delta: float) -> void:
 		selected += 1
 		if selected > amount_of_choices or selected == 0: selected = 1
 		hover_option()
-	if Input.is_action_just_pressed("confirm"):
+	if Input.is_action_just_pressed("confirm") and selected_node:
 		select_option()
-		hide_all()
 	
 func choose(replies: Array[String]) -> void:
 	is_currently_choosing = true
@@ -40,6 +41,9 @@ func show_choice(reply: String) -> void:
 			
 func _show(reply: String, choice_node: Node) -> void:
 	choice_node.visible = true
+	var tween = create_tween()
+	tween.parallel().tween_property(choice_node, "position:x", -683, 0.2).from(-650)
+	tween.parallel().tween_property(choice_node, "modulate:a", 1, 0.2).from(0)
 	choice_node.get_child(0).text = reply
 
 func hide_all():
@@ -50,8 +54,16 @@ func hide_all():
 	
 func select_option():
 	$SelectEffectPlayer.play()
+	selected_node.visible = false
+	await get_tree().create_timer(0.05).timeout
+	selected_node.visible = true
+	await get_tree().create_timer(0.05).timeout
+	selected_node.visible = false
+	await get_tree().create_timer(0.05).timeout
+	selected_node.visible = true
 	is_currently_choosing = false
 	print('Option chosen: ', selected)
+	hide_all()
 
 func hover_option():
 	if selected == -1: return
@@ -61,7 +73,8 @@ func hover_option():
 		
 func select(node: TextureRect):
 	node.texture.atlas.region.position.x = 13
-	node.position.x = -793
+	var tween = create_tween()
+	tween.tween_property(node, 'position:x', -793, 0.1)
 	var text_node = node.get_child(0)
 	text_node.position.x = 122
 	text_node.add_theme_color_override("default_color", Color('4e4e4e'))

@@ -25,9 +25,11 @@ narrator: say await=false [color=green]There's[color=yellow] a bit more to learn
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
 system: ifanswer Absolutely!
-makoto: say await=true [color=white]Thank you![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Thank you![/color]
 system: else
-makoto: say await=true [color=white]Ow, really?[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Ow, really?[/color]
 system: endif
 camera: focus_on makoto
 camera: set_narrator_view false
