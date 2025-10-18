@@ -9,8 +9,14 @@ export class Actor {
 		return this;
 	}
 
-	say(...text: string[]) {
-		log(`${this.constructor.name.toLowerCase()}: say ${normal(text.join(""))}`);
+	say(text: string, options?: SayOptions) {
+		const shouldAwait =
+			options?.await === undefined || options.await === true
+				? "await=true"
+				: "await=false";
+		log(
+			`${this.constructor.name.toLowerCase()}: say ${shouldAwait} ${normal(text)}`,
+		);
 		return this;
 	}
 }
@@ -24,9 +30,15 @@ class Makoto extends Actor {
 		return this;
 	}
 
-	think(...text: string[]) {
+	think(text: string, options?: SayOptions) {
 		system.setMouseColor("blue");
-		log(`${this.constructor.name.toLowerCase()}: say ${think(text.join(""))}`);
+		const shouldAwait =
+			options?.await === undefined || options.await === true
+				? "await=true"
+				: "await=false";
+		log(
+			`${this.constructor.name.toLowerCase()}: say ${shouldAwait} ${think(text)}`,
+		);
 		system.setMouseColor("yellow");
 		return this;
 	}
@@ -53,9 +65,13 @@ class Hifumi extends Actor {
 }
 
 class Narrator {
-	say(...text: string[]) {
+	say(text: string, options?: SayOptions) {
 		system.setMouseColor("green");
-		log(`narrator: say ${narrate(text.join(""))}`);
+		const shouldAwait =
+			options?.await === undefined || options.await === true
+				? "await=true"
+				: "await=false";
+		log(`narrator: say ${shouldAwait} ${narrate(text)}`);
 		system.setMouseColor("yellow");
 		return this;
 	}
@@ -75,3 +91,7 @@ export function actor<K extends keyof typeof actors>(
 	if (seat !== undefined) system.assign(name, seat);
 	return actors[name];
 }
+
+type SayOptions = {
+	await: boolean;
+};

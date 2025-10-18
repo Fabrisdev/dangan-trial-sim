@@ -21,8 +21,8 @@ system.assign("yasuhiro", 15);
 const makoto = actor("makoto", 8);
 
 camera.focusOn(makoto);
-makoto.say("What do you think? Will you do it?");
-
+narrator.say("What do you think? Will you do it?", { await: false });
+system.wait(2);
 const answer = system.choose(["Yes", "No"]);
 
 if (answer === "Yes") {
