@@ -74,13 +74,27 @@ This will be fixed in the future as the compiler advances. In the mean time, if 
 ### Else if
 Just like there isn't a `system.elseif`, there currently isn't a `else if`
 ```ts
-if (cond) { // this part exists and works ✅
-
+const answer = system.choose(["A", "B", "C", "D"])
+if (answer === "A") { // this part exists and works ✅
+  narrator.say("This will run if the answer is A.")
 }
-else if(cond){ // this part does not currently exist, compiler will crash ❌
-
+else if(answer === "B"){ // this does not currently exist, compiler will crash ❌
+  narrator.say("Sorry, this doesn't work as of yet")
 }else { // this part exists and works ✅
-
+  narrator.say("It works, but how can I make it run only if neither A nor B is the answer?")
+}
+```
+For now, you should instead just convert it to an expression using that only uses `if` and `else`. Like this:
+```ts
+const answer = system.choose(["A", "B", "C", "D"])
+if (answer === "A") {
+  narrator.say("This will run if the answer is A.")
+} else {
+  if (answer === "B") {
+    narrator.say("This will run if the answer is B.")
+  }else {
+    narrator.say("Neither A nor B is the answer.")
+  }
 }
 ```
 
