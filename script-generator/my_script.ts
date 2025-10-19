@@ -39,6 +39,14 @@ camera.narratorView(() => {
 		narrator.say("Thank you!");
 		narrator.say("Thank you for choosing yes!");
 		narrator.say("You're my guy bro!");
+		narrator.say("Here comes another question btw");
+		narrator.say("Are you over 18?", { await: false });
+		const b = system.choose(["Yes", "hell nah bro"]);
+		if (b === "Yes") {
+			narrator.say("oh, cool!");
+		} else {
+			narrator.say("get the hell outta here ma boy");
+		}
 	} else {
 		narrator.say("Ow, really?");
 		narrator.say("Grrr");

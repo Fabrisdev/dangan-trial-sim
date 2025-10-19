@@ -7,11 +7,13 @@ var amount_of_choices = 4
 var is_currently_choosing = false
 @export var default_position = -650
 @export var unselected_position = -683
+var input_allowed = false
 	
 func _ready() -> void:
 	hide_all()
 
 func _process(_delta: float) -> void:
+	if not input_allowed: return
 	if is_currently_choosing:
 		get_parent().get_parent().set_can_skip(false)
 	if Input.is_action_just_pressed("up"):
@@ -26,6 +28,7 @@ func _process(_delta: float) -> void:
 		select_option()
 	
 func choose(replies: Array[String]) -> void:
+	input_allowed = true
 	is_currently_choosing = true
 	hide_all()
 	amount_of_choices = replies.size()
@@ -67,6 +70,7 @@ func select_option():
 	print('Option chosen: ', choice_selected)
 	choice_made.emit(choice_selected)
 	hide_all()
+	input_allowed = false
 
 func hover_option():
 	if selected == -1: return

@@ -8,6 +8,8 @@ var is_sleeping := false
 var can_skip := true
 var run_from_and_till = "forever -> forever"
 var currently_inside = "nothing"
+var if_stack = []
+
 
 func _ready() -> void:
 	add_child(actions_node)
@@ -27,28 +29,31 @@ func execute_line(line: String) -> void:
 	var actor_and_action := extract_actor_and_action(line)
 	var actor = actor_and_action.actor
 	var action = actor_and_action.action
-	if action.name == "endif":
-		run_from_and_till = "forever -> forever"
-		currently_inside = "nothing"
+	var name = action.name
+
+	if name == "ifanswer":
+		var expected_answer = action.args[0]
+		var condition_met = $UI.choice_made == expected_answer
+		if_stack.push_back({
+			"executing": condition_met,
+			"in_else": false
+		})
 		return
-		
-	if action.name == "else":
-		currently_inside = "else"
+
+	if name == "else":
+		if if_stack.size() > 0:
+			var top = if_stack.back()
+			top["in_else"] = true
+			top["executing"] = not top["executing"]
+			if_stack[if_stack.size() - 1] = top
 		return
-	
-	if action.name == "ifanswer":
-		currently_inside = "ifanswer"
-		execute_action(actor, action)
+
+	if name == "endif":
+		if if_stack.size() > 0:
+			if_stack.pop_back()
 		return
-	
-	
-	if run_from_and_till == "ifanswer -> else" and currently_inside == "ifanswer":
-		execute_action(actor, action)
-		return
-	if run_from_and_till == "else -> endif" and currently_inside == "else":
-		execute_action(actor, action)
-		return
-	if currently_inside == "nothing":
+
+	if should_execute():
 		execute_action(actor, action)
 
 func execute_action(actor: String, action: Dictionary) -> void:
@@ -103,3 +108,12 @@ func set_can_skip(_can_skip: bool) -> void:
 
 func set_run_from_and_till(_run_f_t: String) -> void:
 	run_from_and_till = _run_f_t
+
+func should_execute() -> bool:
+	if if_stack.is_empty():
+		return true
+	for ctx in if_stack:
+		if not ctx["executing"]:
+		
+			return false
+	return true
