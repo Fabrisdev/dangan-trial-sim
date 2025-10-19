@@ -25,31 +25,41 @@ narrator: say await=false [color=green]There's[color=yellow] a bit more to learn
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
 system: ifanswer Absolutely!
-  system: set_mouse_color green
-  narrator: say await=true [color=green]Thank you![/color]
-  system: set_mouse_color green
-  narrator: say await=true [color=green]Thank you for choosing yes![/color]
-  system: set_mouse_color green
-  narrator: say await=true [color=green]You're my guy bro![/color]
-  system: set_mouse_color green
-  narrator: say await=true [color=green]Here comes another question btw[/color]
-  system: set_mouse_color green
-  narrator: say await=false [color=green]Are you over 18?[/color]
-  system: choose Yes hell_nah_bro
-  system: ifanswer Yes
-    system: set_mouse_color green
-    narrator: say await=true [color=green]oh, cool![/color]
-  system: else
-    system: set_mouse_color green
-    narrator: say await=true [color=green]get the hell outta here ma boy[/color]
-  system: endif
+system: set_mouse_color green
+narrator: say await=true [color=green]Thank you![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Thank you for choosing yes![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]You're my guy bro![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Here comes another question btw[/color]
+system: set_mouse_color green
+narrator: say await=false [color=green]Are you over 18?[/color]
+system: choose Yes hell_nah_bro
+system: ifanswer Yes
+system: set_mouse_color green
+narrator: say await=true [color=green]oh, cool![/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]one last questionn[/color]
+system: choose leave_me_alone i_hate_you i_love_you
+system: ifanswer leave me alone
+system: set_mouse_color green
+narrator: say await=true [color=green]sorry oke[/color]
 system: else
-  system: set_mouse_color green
-  narrator: say await=true [color=green]Ow, really?[/color]
-  system: set_mouse_color green
-  narrator: say await=true [color=green]Grrr[/color]
-  system: set_mouse_color green
-  narrator: say await=true [color=green]I hate you[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]i know[/color]
+system: endif
+system: else
+system: set_mouse_color green
+narrator: say await=true [color=green]get the hell outta here ma boy[/color]
+system: endif
+system: else
+system: set_mouse_color green
+narrator: say await=true [color=green]Ow, really?[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]Grrr[/color]
+system: set_mouse_color green
+narrator: say await=true [color=green]I hate you[/color]
 system: endif
 system: set_mouse_color green
 narrator: say await=true [color=green]This is after the if[/color]

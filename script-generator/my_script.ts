@@ -44,6 +44,13 @@ camera.narratorView(() => {
 		const b = system.choose(["Yes", "hell nah bro"]);
 		if (b === "Yes") {
 			narrator.say("oh, cool!");
+			narrator.say("one last questionn");
+			const c = system.choose(["leave me alone", "i hate you", "i love you"]);
+			if (c === "leave me alone") {
+				narrator.say("sorry oke");
+			} else {
+				narrator.say("i know");
+			}
 		} else {
 			narrator.say("get the hell outta here ma boy");
 		}

@@ -32,7 +32,7 @@ func execute_line(line: String) -> void:
 	var name = action.name
 
 	if name == "ifanswer":
-		var expected_answer = action.args[0]
+		var expected_answer = " ".join(action.args)
 		var condition_met = $UI.choice_made == expected_answer
 		if_stack.push_back({
 			"executing": condition_met,
