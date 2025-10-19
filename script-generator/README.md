@@ -84,7 +84,7 @@ else if(answer === "B"){ // this does not currently exist, compiler will crash â
   narrator.say("It works, but how can I make it run only if neither A nor B is the answer?")
 }
 ```
-For now, you should instead just convert it to an expression using that only uses `if` and `else`. Like this:
+For now, you should instead just convert it to an expression that only uses `if` and `else`. Like this:
 ```ts
 const answer = system.choose(["A", "B", "C", "D"])
 if (answer === "A") {
