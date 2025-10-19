@@ -13,6 +13,7 @@ system: assign byakuya:14
 system: assign yasuhiro:15
 system: assign makoto:8
 camera: focus_on makoto
+makoto: expression hmm
 system: set_mouse_color blue
 makoto: say await=true [color=#49aec5]Kyoko said it was a "bewildering act"...[/color]
 system: set_mouse_color yellow
@@ -25,43 +26,26 @@ narrator: say await=false [color=green]There's[color=yellow] a bit more to learn
 system: wait 0.2s
 system: choose Not_at_all! Absolutely!
 system: ifanswer Absolutely!
+system: show_ui false
 system: set_mouse_color green
-narrator: say await=true [color=green]Thank you![/color]
+narrator: say await=true [color=green]From here on out, the number of weak spots will start going up.[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]Thank you for choosing yes![/color]
+narrator: say await=true [color=green]But no matter how many weak spots, there's essentially only one[color=yellow] lie or contradiction [/color]in that debate.[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]You're my guy bro![/color]
+narrator: say await=true [color=green]What I'm trying to say is, not all weak spots you see are necessarily false.[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]Here comes another question btw[/color]
+narrator: say await=true [color=green]Use a Truth Bullet on the wrong one, and not only will you fail to refute what they said...[/color]
 system: set_mouse_color green
-narrator: say await=false [color=green]Are you over 18?[/color]
-system: choose Yes hell_nah_bro
-system: ifanswer Yes
+narrator: say await=true [color=green]But you'll also lower your trust with everyone, and[color=yellow] your Influence Gauge will take damage[/color].[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]oh, cool![/color]
+narrator: say await=true [color=green]Now this is important, because if your Influence Gauge reaches zero, you[color=yellow] fail[/color].[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]one last questionn[/color]
-system: choose leave_me_alone i_hate_you i_love_you
-system: ifanswer leave me alone
+narrator: say await=true [color=green]You'll have to rely on your own[color=yellow] logic [/color]to determine which weak spots are actually [color=yellow]lies or contradictions[/color].[/color]
 system: set_mouse_color green
-narrator: say await=true [color=green]sorry oke[/color]
-system: else
-system: set_mouse_color green
-narrator: say await=true [color=green]i know[/color]
+narrator: say await=true [color=green]Well then...good luck, and have fun![/color]
 system: endif
-system: else
-system: set_mouse_color green
-narrator: say await=true [color=green]get the hell outta here ma boy[/color]
-system: endif
-system: else
-system: set_mouse_color green
-narrator: say await=true [color=green]Ow, really?[/color]
-system: set_mouse_color green
-narrator: say await=true [color=green]Grrr[/color]
-system: set_mouse_color green
-narrator: say await=true [color=green]I hate you[/color]
-system: endif
-system: set_mouse_color green
-narrator: say await=true [color=green]This is after the if[/color]
 camera: focus_on makoto
 camera: set_narrator_view false
+system: set_mouse_color blue
+makoto: say await=true [color=#49aec5]welp lets start it[/color]
+system: set_mouse_color yellow

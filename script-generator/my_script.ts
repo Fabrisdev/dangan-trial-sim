@@ -22,6 +22,7 @@ system.assign("yasuhiro", 15);
 const makoto = actor("makoto", 8);
 
 camera.focusOn(makoto);
+makoto.expression("hmm");
 makoto.think('Kyoko said it was a "bewildering act"...');
 makoto.think(
 	"I almost didn't notice it at first, but... is that the key point here?",
@@ -34,14 +35,42 @@ camera.narratorView(() => {
 		{ await: false },
 	);
 	system.wait(0.2);
-	const answer = system.choose(["Not at all!", "Absolutely!", "idk"]);
+	const answer = system.choose(["Not at all!", "Absolutely!"]);
 	if (answer === "Absolutely!") {
-		narrator.say("Thank you!");
-	} else if (answer === "idk") {
-		narrator.say("the idk");
-	} else {
-		narrator.say("the else");
+		system.showUi(false);
+		narrator.say(
+			"From here on out, the number of weak spots will start going up.",
+		);
+		narrator.say(
+			"But no matter how many weak spots, there's essentially only one" +
+				bold(" lie or contradiction ") +
+				"in that debate.",
+		);
+		narrator.say(
+			"What I'm trying to say is, not all weak spots you see are necessarily false.",
+		);
+		narrator.say(
+			"Use a Truth Bullet on the wrong one, and not only will you fail to refute what they said...",
+		);
+		narrator.say(
+			"But you'll also lower your trust with everyone, and" +
+				bold(" your Influence Gauge will take damage") +
+				".",
+		);
+		narrator.say(
+			"Now this is important, because if your Influence Gauge reaches zero, you" +
+				bold(" fail") +
+				".",
+		);
+		narrator.say(
+			"You'll have to rely on your own" +
+				bold(" logic ") +
+				"to determine which weak spots are actually " +
+				bold("lies or contradictions") +
+				".",
+		);
+		narrator.say("Well then...good luck, and have fun!");
 	}
-	narrator.say("This is after the if");
 	return makoto;
 });
+makoto.think("welp lets start it");

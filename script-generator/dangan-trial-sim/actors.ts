@@ -39,7 +39,6 @@ class Makoto extends Actor {
 		log(
 			`${this.constructor.name.toLowerCase()}: say ${shouldAwait} ${think(text)}`,
 		);
-		system.setMouseColor("yellow");
 		return this;
 	}
 }
