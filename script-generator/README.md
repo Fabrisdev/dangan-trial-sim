@@ -71,6 +71,19 @@ Therefore, it is very important to take into account that the only thing that ac
 
 This will be fixed in the future as the compiler advances. In the mean time, if you're using the callback version you don't need to worry about any of this.
 
+### Else if
+Just like there isn't a `system.elseif`, there currently isn't a `else if`
+```ts
+if (cond) { // this part exists and works ✅
+
+}
+else if(cond){ // this part does not currently exist, compiler will crash ❌
+
+}else { // this part exists and works ✅
+
+}
+```
+
 ## Code example
 ```ts
 import { actor, camera } from 'dangan-trial-sim'

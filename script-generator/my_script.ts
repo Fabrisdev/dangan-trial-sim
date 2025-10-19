@@ -34,30 +34,13 @@ camera.narratorView(() => {
 		{ await: false },
 	);
 	system.wait(0.2);
-	const answer = system.choose(["Not at all!", "Absolutely!"]);
+	const answer = system.choose(["Not at all!", "Absolutely!", "idk"]);
 	if (answer === "Absolutely!") {
 		narrator.say("Thank you!");
-		narrator.say("Thank you for choosing yes!");
-		narrator.say("You're my guy bro!");
-		narrator.say("Here comes another question btw");
-		narrator.say("Are you over 18?", { await: false });
-		const b = system.choose(["Yes", "hell nah bro"]);
-		if (b === "Yes") {
-			narrator.say("oh, cool!");
-			narrator.say("one last questionn");
-			const c = system.choose(["leave me alone", "i hate you", "i love you"]);
-			if (c === "leave me alone") {
-				narrator.say("sorry oke");
-			} else {
-				narrator.say("i know");
-			}
-		} else {
-			narrator.say("get the hell outta here ma boy");
-		}
+	} else if (answer === "idk") {
+		narrator.say("the idk");
 	} else {
-		narrator.say("Ow, really?");
-		narrator.say("Grrr");
-		narrator.say("I hate you");
+		narrator.say("the else");
 	}
 	narrator.say("This is after the if");
 	return makoto;
