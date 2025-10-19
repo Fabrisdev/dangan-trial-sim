@@ -61,6 +61,14 @@ answer === "Yes" // ✅
 answer !== "No" // ❌ won't transpile, compiler only searches for '==='
 "Yes" === answer // ❌ won't transpile, compiler needs value to check to be on the right
 ```
+Also note that the variable on the left nor it's name actually matters at all.
+```ts
+//this line compiles to
+if(answer === "Okay, I'll do it") // -> ifanswer Okay I'll do it
+//note how the variable is not there anymore
+```
+Therefore, it is very important to take into account that the only thing that actually matters is the last time you called `system.choice`. The system only tracks the last value inputted and not any previous ones.
+
 This will be fixed in the future as the compiler advances. In the mean time, if you're using the callback version you don't need to worry about any of this.
 
 ## Code example
