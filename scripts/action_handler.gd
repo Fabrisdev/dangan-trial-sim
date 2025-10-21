@@ -137,4 +137,8 @@ func run(_actor: String, args: Array[String]) -> void:
 	_run_nonstop(parsed_game.get_data())
 	
 func _run_nonstop(game) -> void:
-	pass
+	var lines = game.lines
+	for line in lines:
+		var character = line.focus
+		focus_on('_', [character])
+		
