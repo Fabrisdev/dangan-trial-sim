@@ -76,6 +76,11 @@ class System<Tags extends string = never> {
 		log(`system: show_ui ${bool}`);
 		return this;
 	}
+
+	run(game: Tags) {
+		log(`system: play ${this.preloadedFiles[game]}`);
+		return this;
+	}
 }
 
 class Camera {
