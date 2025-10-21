@@ -1,15 +1,10 @@
 import { system as _system, actor, camera } from "dangan-trial-maker";
 import { bold } from "dangan-trial-maker/bb";
 
-const system = _system
-	.preload({
-		path: "user://underground.mp3",
-		tag: "underground_theme",
-	})
-	.preload({
-		path: "user://my_nonstop.yaml",
-		tag: "my_nonstop",
-	});
+const system = _system.preload({
+	path: "user://my_nonstop.nonstop.yaml",
+	tag: "my_nonstop",
+});
 
 system.assign("hina", 1);
 system.assign("mondo", 2);

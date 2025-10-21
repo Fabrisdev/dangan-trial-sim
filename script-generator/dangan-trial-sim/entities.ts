@@ -78,7 +78,7 @@ class System<Tags extends string = never> {
 	}
 
 	run(game: Tags) {
-		log(`system: play ${this.preloadedFiles[game]}`);
+		log(`system: run ${this.preloadedFiles[game]}`);
 		return this;
 	}
 }
