@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ee72d8nbov4l"
-path="res://.godot/imported/Hina.png-d6acf04e9d1f01e6fa03f0f297c0de8e.ctex"
+uid="uid://khic7n8fw3qb"
+path="res://.godot/imported/icon.png-d7ab0c8c0344c4ce0855b0aa28f5a999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://script-generator/node_modules/dangan-trial-maker/expressions/Hina.png"
-dest_files=["res://.godot/imported/Hina.png-d6acf04e9d1f01e6fa03f0f297c0de8e.ctex"]
+source_file="res://yaml/icon.png"
+dest_files=["res://.godot/imported/icon.png-d7ab0c8c0344c4ce0855b0aa28f5a999.ctex"]
 
 [params]
 

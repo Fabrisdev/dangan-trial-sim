@@ -114,3 +114,19 @@ func ifanswer(_actor: String, args: Array[String]) -> void:
 		get_parent().set_run_from_and_till("ifanswer -> else")
 	else:
 		get_parent().set_run_from_and_till("else -> endif")
+
+func run(_actor: String, args: Array[String]) -> void:
+	var game_path = args[0]
+	var bytes: PackedByteArray
+	if preloaded_files.has(game_path):
+		bytes = preloaded_files[game_path]
+	elif game_path.to_lower().ends_with('.nonstop.yaml'):
+		var file = FileAccess.open(game_path, FileAccess.READ)
+		bytes = file.get_buffer(file.get_length())
+		preloaded_files[game_path] = bytes
+		push_warning('Consider preloading the file to avoid rereading it and have faster load times. ('+game_path+')')
+	else:
+		push_error("Unknown game. Available games are [nonstop] (" + game_path + ")")
+		return
+	var code := bytes.get_string_from_utf8()
+	#var parsed_game = 
