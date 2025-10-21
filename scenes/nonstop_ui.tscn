@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://bqwomm4q605rd"]
+[gd_scene load_steps=3 format=3 uid="uid://bqwomm4q605rd"]
+
+[ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="1_hef6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u03lm"]
+atlas = ExtResource("1_hef6g")
+region = Rect2(20, 3018, 148, 240)
+filter_clip = true
 
 [node name="NonstopUI" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1132.0
+offset_right = 1280.0
+offset_bottom = 240.0
+texture = SubResource("AtlasTexture_u03lm")
