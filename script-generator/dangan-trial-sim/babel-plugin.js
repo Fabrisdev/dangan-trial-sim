@@ -2,8 +2,13 @@ module.exports = ({ types: t }) => ({
 	name: "if-to-system-if",
 	visitor: {
 		IfStatement(path) {
-			const test = path.node.test;
+			// Verifica si tiene un comentario especial
+			const hasSystemComment = path.node.leadingComments?.some((c) =>
+				c.value.includes("@system"),
+			);
+			if (!hasSystemComment) return; // no hacer nada si no está el comentario
 
+			const test = path.node.test;
 			if (
 				t.isBinaryExpression(test) &&
 				test.operator === "===" &&
