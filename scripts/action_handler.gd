@@ -129,4 +129,11 @@ func run(_actor: String, args: Array[String]) -> void:
 		push_error("Unknown game. Available games are [nonstop] (" + game_path + ")")
 		return
 	var code := bytes.get_string_from_utf8()
-	#var parsed_game = 
+	var parsed_game := YAML.parse(code)
+	if parsed_game.has_error():
+		push_error('Error ocurred when parsing game. Please recheck the syntax of the file. ('+game_path+')')
+		return
+	_run_nonstop(parsed_game.get_data())
+	
+func _run_nonstop(game) -> void:
+	pass
