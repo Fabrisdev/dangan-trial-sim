@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqwomm4q605rd"]
+[gd_scene load_steps=9 format=3 uid="uid://bqwomm4q605rd"]
 
 [ext_resource type="Texture2D" uid="uid://bedkj6gbcska" path="res://sprites/class_trial/assets.png" id="1_hef6g"]
 
@@ -7,6 +7,58 @@ atlas = ExtResource("1_hef6g")
 region = Rect2(20, 3018, 148, 240)
 filter_clip = true
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hef6g"]
+atlas = ExtResource("1_hef6g")
+region = Rect2(430, 6304, 200, 328)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr7cq"]
+atlas = ExtResource("1_hef6g")
+region = Rect2(20, 1632, 452, 452)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wpkc"]
+atlas = ExtResource("1_hef6g")
+region = Rect2(20, 2556, 272, 272)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_hef6g"]
+resource_name = "rotate_wheel"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletWheel/InnerSpinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 4.495968153137393]
+}
+
+[sub_resource type="Animation" id="Animation_u03lm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BulletWheel/InnerSpinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gr7cq"]
+_data = {
+&"RESET": SubResource("Animation_u03lm"),
+&"rotate_wheel": SubResource("Animation_hef6g")
+}
+
 [node name="NonstopUI" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -14,3 +66,63 @@ offset_left = 1132.0
 offset_right = 1280.0
 offset_bottom = 240.0
 texture = SubResource("AtlasTexture_u03lm")
+
+[node name="Face" type="TextureRect" parent="."]
+offset_left = 1019.0
+offset_top = 261.0
+offset_right = 1219.0
+offset_bottom = 589.0
+texture = SubResource("AtlasTexture_hef6g")
+
+[node name="BottomLine" type="ColorRect" parent="."]
+offset_left = -28.0
+offset_top = 709.99994
+offset_right = 1405.0
+offset_bottom = 759.99994
+rotation = -0.06842744
+
+[node name="BackgroundBlur" type="ColorRect" parent="."]
+offset_left = 579.0
+offset_top = 688.0
+offset_right = 1299.1257
+offset_bottom = 804.67346
+rotation = -0.0717317
+color = Color(1, 1, 1, 0.2901961)
+
+[node name="BulletWheel" type="TextureRect" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -812.0
+offset_top = 122.0
+offset_right = -360.0
+offset_bottom = 574.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_gr7cq")
+
+[node name="InnerSpinner" type="TextureRect" parent="BulletWheel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.5
+offset_top = -241.5
+offset_right = 241.5
+offset_bottom = 241.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_5wpkc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gr7cq")
+}
+autoplay = "rotate_wheel"
