@@ -19,7 +19,14 @@ system.assign("chihiro", 13);
 system.assign("byakuya", 14);
 system.assign("yasuhiro", 15);
 
+const answer = system.choose(["A", "B"]);
 const makoto = actor("makoto", 8);
+
+// @system
+if (answer === "A") {
+	makoto.say("A");
+}
+
 makoto.think("welp lets start it");
 
 system.run("my_nonstop");

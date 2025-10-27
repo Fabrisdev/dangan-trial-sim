@@ -40,7 +40,7 @@ system.if(answer, "Yes", () => {
   narrator.say('Ow, really?')
 })
 ```
-Or... you can just directly use Javascript's IF statement!
+Or... you can just directly use Javascript's IF statement with the `@system` directive!
 ```ts
 import { actor, system } from 'dangan-trial-sim'
 
@@ -49,6 +49,7 @@ narrator.say('What do you think? Will you do it?')
 
 const answer = system.ask(['Yes', 'No'])
 
+// @system
 if(answer === 'Yes'){
   narrator.say('Thank you!')
 }else{
